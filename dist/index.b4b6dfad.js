@@ -2924,12 +2924,14 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$98a3.prelude(module);
 
 try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
 var _mainView = require("./components/MainView/MainView");
+var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 var _indexScss = require("./index.scss");
 const MyFlixApplication = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainViewDefault.default), {}, void 0, false, {
         fileName: "src/index.jsx",
         lineNumber: 7,
         columnNumber: 10
@@ -2951,7 +2953,7 @@ $RefreshReg$(_c, "MyFlixApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","./components/MainView/MainView":"8CR3S"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","./components/MainView/MainView":"8CR3S","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("8289cb876f714f8c");
 
