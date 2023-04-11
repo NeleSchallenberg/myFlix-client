@@ -6,8 +6,47 @@ import { MovieView } from '../MovieView/MovieView';
 export const MainView = () => {
 
   // Creating MainView component
-  const [movies] = useState([
-    // Array of movies
+  const [movies] = useState([]);
+
+  // Adding new state variable with initial value of null (no book cards were clicked)
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  
+  // Rendering MovieView component when a movie card is clicked
+  if (selectedMovie) {
+    return (
+      <MovieView
+        movie={selectedMovie}
+        onBackClick={() =>
+          setSelectedMovie(null)
+        }
+      />
+    )
+  };
+
+  // Returning a text message if array is empty
+  if (movies.length === 0) {
+    return <div>No movies available!</div>
+  } else {
+    // Returning clickable MovieCard component for each movie
+    return (
+      <div>
+        {movies.map((movie) => (
+          <MovieCard 
+            key={movie.id}
+            movie={movie}
+            onMovieClick={(newSelectedMovie) => {
+              setSelectedMovie(newSelectedMovie)
+            }}
+          />
+        ))}
+      </div>
+    )
+  };
+}
+
+
+/* ----- MOVIE ARRAY FROM EARLIER EXERCISE -----
+
     {
       id: 1,
       title: "Lady Bird",
@@ -97,41 +136,5 @@ export const MainView = () => {
       },
       imagePath: "https://images.mubicdn.net/images/film/1719/cache-9011-1620312993/image-w1280.jpg?size=1280x"
     }
-
-  ]);
-
-  // Adding new state variable with initial value of null (no book cards were clicked)
-  const [selectedMovie, setSelectedMovie] = useState(null);
-  
-  // Rendering MovieView component when a movie card is clicked
-  if (selectedMovie) {
-    return (
-      <MovieView
-        movie={selectedMovie}
-        onBackClick={() =>
-          setSelectedMovie(null)
-        }
-      />
-    )
-  };
-
-  // Returning a text message if array is empty
-  if (movies.length === 0) {
-    return <div>No movies available!</div>
-  } else {
-    // Returning clickable MovieCard component for each movie
-    return (
-      <div>
-        {movies.map((movie) => (
-          <MovieCard 
-            key={movie.id}
-            movie={movie}
-            onMovieClick={(newSelectedMovie) => {
-              setSelectedMovie(newSelectedMovie)
-            }}
-          />
-        ))}
-      </div>
-    )
-  };
-}
+    
+    */
