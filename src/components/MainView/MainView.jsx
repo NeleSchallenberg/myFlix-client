@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
 
-// Exposing MainView component
+// Expose MainView component
 export const MainView = () => {
 
-  // Creating MainView component
+  // Create MainView component
   const [movies] = useState([]);
 
-  // Adding new state variable with initial value of null (no book cards were clicked)
+  // Add new state variable with initial value of null (no book cards were clicked)
   const [selectedMovie, setSelectedMovie] = useState(null);
   
-  // Rendering MovieView component when a movie card is clicked
+  // Render MovieView component when a movie card is clicked
   if (selectedMovie) {
     return (
       <MovieView
@@ -23,11 +23,11 @@ export const MainView = () => {
     )
   };
 
-  // Returning a text message if array is empty
+  // Return a text message if array is empty
   if (movies.length === 0) {
     return <div>No movies available!</div>
   } else {
-    // Returning clickable MovieCard component for each movie
+    // Return clickable MovieCard component for each movie
     return (
       <div>
         {movies.map((movie) => (
@@ -136,5 +136,5 @@ export const MainView = () => {
       },
       imagePath: "https://images.mubicdn.net/images/film/1719/cache-9011-1620312993/image-w1280.jpg?size=1280x"
     }
-    
+
     */
