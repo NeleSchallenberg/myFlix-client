@@ -27287,10 +27287,10 @@ var _loginView = require("../LoginView/LoginView");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    // Create MainView component
+    // Add state variables to components
     const [movies, setMovies] = (0, _react.useState)([]);
-    // Add new state variable with initial value of null (no book cards were clicked)
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    const [user, setUser] = (0, _react.useState)(null);
     // Load data from API
     (0, _react.useEffect)(()=>{
         fetch("https://female-filmmakers.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
@@ -27309,13 +27309,19 @@ const MainView = ()=>{
             setMovies(moviesFromApi);
         });
     }, []);
+    // Display LoginView when no user is logged in
+    if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {}, void 0, false, {
+        fileName: "src/components/MainView/MainView.jsx",
+        lineNumber: 37,
+        columnNumber: 12
+    }, undefined);
     // Render MovieView component when a movie card is clicked
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 39,
+        lineNumber: 43,
         columnNumber: 7
     }, undefined);
     // Return a text message if array is empty
@@ -27323,7 +27329,7 @@ const MainView = ()=>{
         children: "No movies available!"
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 50,
+        lineNumber: 54,
         columnNumber: 12
     }, undefined);
     else // Return clickable MovieCard component for each movie
@@ -27335,12 +27341,12 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/MainView/MainView.jsx",
-                lineNumber: 56,
+                lineNumber: 60,
                 columnNumber: 11
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 54,
+        lineNumber: 58,
         columnNumber: 7
     }, undefined);
 } /* ----- MOVIE ARRAY FROM EARLIER EXERCISE -----
@@ -27436,7 +27442,7 @@ const MainView = ()=>{
     }
 
     */ ;
-_s(MainView, "PO+XgOji7E32nFJj3H5UPLPJ7w4=");
+_s(MainView, "AA2Lbd5vppiQn5Rpxq/geFPiCys=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");

@@ -6,11 +6,10 @@ import { LoginView } from '../LoginView/LoginView';
 // Expose MainView component
 export const MainView = () => {
 
-  // Create MainView component
+  // Add state variables to components
   const [movies, setMovies] = useState([]);
-
-  // Add new state variable with initial value of null (no book cards were clicked)
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [user, setUser] = useState(null);
 
   // Load data from API
   useEffect(() => {
@@ -32,6 +31,11 @@ export const MainView = () => {
         setMovies(moviesFromApi);
       });
   }, []);
+
+  // Display LoginView when no user is logged in
+  if (!user) {
+    return <LoginView />
+  }
   
   // Render MovieView component when a movie card is clicked
   if (selectedMovie) {
