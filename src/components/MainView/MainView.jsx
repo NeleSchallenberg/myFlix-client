@@ -16,7 +16,19 @@ export const MainView = () => {
     fetch('https://female-filmmakers.herokuapp.com/movies')
       .then((response) => response.json())
       .then((data) => {
-        console.log('Movies from API: ', data);
+        console.log(data);
+        const moviesFromApi = data.map((movie) => {
+          return {
+            title: movie.Title,
+            year: movie.Year,
+            length: movie.Length,
+            description: movie.Description,
+            genre: movie.Genre.Name,
+            director: movie.Director.Name,
+            imagePath: movie.ImagePath
+          };
+        });
+        setMovies(moviesFromApi);
       });
   }, []);
   
@@ -41,7 +53,7 @@ export const MainView = () => {
       <div>
         {movies.map((movie) => (
           <MovieCard 
-            key={movie.id}
+            key={movie._id}
             movie={movie}
             onMovieClick={(newSelectedMovie) => {
               setSelectedMovie(newSelectedMovie)
