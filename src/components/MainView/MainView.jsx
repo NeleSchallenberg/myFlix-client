@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
 
@@ -6,10 +6,19 @@ import { MovieView } from '../MovieView/MovieView';
 export const MainView = () => {
 
   // Create MainView component
-  const [movies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   // Add new state variable with initial value of null (no book cards were clicked)
   const [selectedMovie, setSelectedMovie] = useState(null);
+
+  // Load data from API
+  useEffect(() => {
+    fetch('https://female-filmmakers.herokuapp.com/movies')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Movies from API: ', data);
+      });
+  }, []);
   
   // Render MovieView component when a movie card is clicked
   if (selectedMovie) {
