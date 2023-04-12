@@ -2924,14 +2924,12 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$98a3.prelude(module);
 
 try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
 var _mainView = require("./components/MainView/MainView");
-var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 var _indexScss = require("./index.scss");
 const MyFlixApplication = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainViewDefault.default), {}, void 0, false, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
         fileName: "src/index.jsx",
         lineNumber: 7,
         columnNumber: 10
@@ -2953,7 +2951,7 @@ $RefreshReg$(_c, "MyFlixApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","./components/MainView/MainView":"8CR3S","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","./components/MainView/MainView":"8CR3S"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("8289cb876f714f8c");
 
@@ -27288,115 +27286,34 @@ var _movieView = require("../MovieView/MovieView");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    // Creating MainView component
-    const [movies] = (0, _react.useState)([
-        // Array of movies
-        {
-            id: 1,
-            title: "Lady Bird",
-            year: "2017",
-            length: "94 min",
-            description: "A fiercely independent teenager tries to make her own way in the world while wanting to get out of her hometown of Sacramento, California & to get away from her complicated mother & recently-unemployed father.",
-            genre: {
-                name: "Comedy",
-                description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
-            },
-            director: {
-                name: "Greta Gerwig",
-                bio: "Greta Celeste Gerwig, born 4th of August 1983 in Sacramento, California, is an American actress, screenwriter, and director, known for acting in and making dialogue-driven independent films.",
-                birth: "1983"
-            },
-            imagePath: "https://images.mubicdn.net/images/film/154518/cache-247719-1644229257/image-w1280.jpg?size=1280x"
-        },
-        {
-            id: 2,
-            title: "Little Women",
-            year: "2019",
-            length: "135 min",
-            description: "Determined to make her own way in the 1860s, a writer looks back at the tough yet tender times spent with her three spirited sisters and a close friend.",
-            genre: {
-                name: "Drama",
-                description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
-            },
-            director: {
-                name: "Greta Gerwig",
-                bio: "Greta Celeste Gerwig, born 4th of August 1983 in Sacramento, California, is an American actress, screenwriter, and director, known for acting in and making dialogue-driven independent films. She first garnered attention after working on and appearing in several mumblecore movies.",
-                birth: "1983"
-            },
-            imagePath: "https://images.mubicdn.net/images/film/210045/cache-446056-1578126368/image-w1280.jpg?size=1280x"
-        },
-        {
-            id: 3,
-            title: "The Virgin Suicides",
-            year: "1999",
-            length: "97 min",
-            description: "In suburban 1970's America, five dreamy sisters are quarantined away from social interaction when their youngest sister commits suicide. Their doomed fates indelibly mark the neighborhood boys who obsess over them.",
-            genre: {
-                name: "Drama",
-                description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
-            },
-            director: {
-                name: "Sofia Coppola",
-                bio: "Sofia Carmina Coppola, born 14th of May 1971 in New York City, is an American filmmaker and actress. The youngest child and only daughter of filmmakers Eleanor and Francis Ford Coppola, she made her film debut as an infant in her father's acclaimed crime drama film 'The Godfather'.",
-                birth: "1971"
-            },
-            imagePath: "https://images.mubicdn.net/images/film/313/cache-8080-1530511393/image-w1280.jpg?size=1280x"
-        },
-        {
-            id: 4,
-            title: "Lost In Translation",
-            year: "2003",
-            length: "102 min",
-            description: "A faded movie star and a neglected young woman form an unlikely bond after crossing paths in Tokyo.",
-            genre: {
-                name: "Drama",
-                description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
-            },
-            director: {
-                name: "Sofia Coppola",
-                bio: "Sofia Carmina Coppola, born 14th of May 1971 in New York City, is an American filmmaker and actress. The youngest child and only daughter of filmmakers Eleanor and Francis Ford Coppola, she made her film debut as an infant in her father's acclaimed crime drama film 'The Godfather'.",
-                birth: "1971"
-            },
-            imagePath: "https://images.mubicdn.net/images/film/289/cache-94453-1545161311/image-w1280.jpg?size=1280x"
-        },
-        {
-            id: 5,
-            title: "Marie Antoinette",
-            year: "2006",
-            length: "123 min",
-            description: "In 1770, Marie Antoinette, an Austrian archduchess, weds a French royal. Pressured to bear an heir to the French throne, she is all at ease at the royal court and unready for a gory anti-royal revolt.",
-            genre: {
-                name: "Drama",
-                description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
-            },
-            director: {
-                name: "Sofia Coppola",
-                bio: "Sofia Carmina Coppola, born 14th of May 1971 in New York City, is an American filmmaker and actress. The youngest child and only daughter of filmmakers Eleanor and Francis Ford Coppola, she made her film debut as an infant in her father's acclaimed crime drama film 'The Godfather'.",
-                birth: "1971"
-            },
-            imagePath: "https://images.mubicdn.net/images/film/1719/cache-9011-1620312993/image-w1280.jpg?size=1280x"
-        }
-    ]);
-    // Adding new state variable with initial value of null (no book cards were clicked)
+    // Create MainView component
+    const [movies, setMovies] = (0, _react.useState)([]);
+    // Add new state variable with initial value of null (no book cards were clicked)
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    // Rendering MovieView component when a movie card is clicked
+    // Load data from API
+    (0, _react.useEffect)(()=>{
+        fetch("https://female-filmmakers.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
+            console.log("Movies from API: ", data);
+        });
+    }, []);
+    // Render MovieView component when a movie card is clicked
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 109,
+        lineNumber: 26,
         columnNumber: 7
     }, undefined);
-    // Returning a text message if array is empty
+    // Return a text message if array is empty
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "No movies available!"
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 120,
+        lineNumber: 37,
         columnNumber: 12
     }, undefined);
-    else // Returning clickable MovieCard component for each movie
+    else // Return clickable MovieCard component for each movie
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                 movie: movie,
@@ -27405,16 +27322,108 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/MainView/MainView.jsx",
-                lineNumber: 126,
+                lineNumber: 43,
                 columnNumber: 11
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 124,
+        lineNumber: 41,
         columnNumber: 7
     }, undefined);
-};
-_s(MainView, "XCkNai3nu8UKioKFekh3ZflzqCE=");
+} /* ----- MOVIE ARRAY FROM EARLIER EXERCISE -----
+
+    {
+      id: 1,
+      title: "Lady Bird",
+      year: "2017",
+      length: "94 min",
+      description: "A fiercely independent teenager tries to make her own way in the world while wanting to get out of her hometown of Sacramento, California & to get away from her complicated mother & recently-unemployed father.",
+      genre: {
+        name: "Comedy",
+        description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+      },
+      director: {
+        name: "Greta Gerwig",
+        bio: "Greta Celeste Gerwig, born 4th of August 1983 in Sacramento, California, is an American actress, screenwriter, and director, known for acting in and making dialogue-driven independent films.",
+        birth: "1983"
+      },
+      imagePath: "https://images.mubicdn.net/images/film/154518/cache-247719-1644229257/image-w1280.jpg?size=1280x"
+    },
+
+    {
+      id: 2,
+      title: "Little Women",
+      year: "2019",
+      length: "135 min",
+      description: "Determined to make her own way in the 1860s, a writer looks back at the tough yet tender times spent with her three spirited sisters and a close friend.",
+      genre: {
+        name: "Drama",
+        description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+      },
+      director: {
+        name: "Greta Gerwig",
+        bio: "Greta Celeste Gerwig, born 4th of August 1983 in Sacramento, California, is an American actress, screenwriter, and director, known for acting in and making dialogue-driven independent films. She first garnered attention after working on and appearing in several mumblecore movies.",
+        birth: "1983"
+      },
+      imagePath: "https://images.mubicdn.net/images/film/210045/cache-446056-1578126368/image-w1280.jpg?size=1280x"
+    },
+
+    {
+      id: 3,
+      title: "The Virgin Suicides",
+      year: "1999",
+      length: "97 min",
+      description: "In suburban 1970's America, five dreamy sisters are quarantined away from social interaction when their youngest sister commits suicide. Their doomed fates indelibly mark the neighborhood boys who obsess over them.",
+      genre: {
+        name: "Drama",
+        description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+      },
+      director: {
+        name: "Sofia Coppola",
+        bio: "Sofia Carmina Coppola, born 14th of May 1971 in New York City, is an American filmmaker and actress. The youngest child and only daughter of filmmakers Eleanor and Francis Ford Coppola, she made her film debut as an infant in her father's acclaimed crime drama film 'The Godfather'.",
+        birth: "1971"
+      },
+      imagePath: "https://images.mubicdn.net/images/film/313/cache-8080-1530511393/image-w1280.jpg?size=1280x"
+    },
+
+    {
+      id: 4,
+      title: "Lost In Translation",
+      year: "2003",
+      length: "102 min",
+      description: "A faded movie star and a neglected young woman form an unlikely bond after crossing paths in Tokyo.",
+      genre: {
+        name: "Drama",
+        description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+      },
+      director: {
+        name: "Sofia Coppola",
+        bio:"Sofia Carmina Coppola, born 14th of May 1971 in New York City, is an American filmmaker and actress. The youngest child and only daughter of filmmakers Eleanor and Francis Ford Coppola, she made her film debut as an infant in her father's acclaimed crime drama film 'The Godfather'.",
+        birth: "1971"
+      },
+      imagePath: "https://images.mubicdn.net/images/film/289/cache-94453-1545161311/image-w1280.jpg?size=1280x"
+    },
+
+    {
+      id: 5,
+      title: "Marie Antoinette",
+      year: "2006",
+      length: "123 min",
+      description: "In 1770, Marie Antoinette, an Austrian archduchess, weds a French royal. Pressured to bear an heir to the French throne, she is all at ease at the royal court and unready for a gory anti-royal revolt.",
+      genre: {
+        name: "Drama",
+        description: "In film and television, drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+      },
+      director: {
+        name: "Sofia Coppola",
+        bio:"Sofia Carmina Coppola, born 14th of May 1971 in New York City, is an American filmmaker and actress. The youngest child and only daughter of filmmakers Eleanor and Francis Ford Coppola, she made her film debut as an infant in her father's acclaimed crime drama film 'The Godfather'.",
+        birth: "1971"
+      },
+      imagePath: "https://images.mubicdn.net/images/film/1719/cache-9011-1620312993/image-w1280.jpg?size=1280x"
+    }
+
+    */ ;
+_s(MainView, "PO+XgOji7E32nFJj3H5UPLPJ7w4=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
