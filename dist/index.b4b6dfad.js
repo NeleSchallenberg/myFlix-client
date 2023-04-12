@@ -27296,6 +27296,7 @@ const MainView = ()=>{
             console.log(data);
             const moviesFromApi = data.map((movie)=>{
                 return {
+                    id: movie._id,
                     title: movie.Title,
                     year: movie.Year,
                     length: movie.Length,
@@ -27314,7 +27315,7 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 38,
+        lineNumber: 39,
         columnNumber: 7
     }, undefined);
     // Return a text message if array is empty
@@ -27322,7 +27323,7 @@ const MainView = ()=>{
         children: "No movies available!"
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 49,
+        lineNumber: 50,
         columnNumber: 12
     }, undefined);
     else // Return clickable MovieCard component for each movie
@@ -27332,14 +27333,14 @@ const MainView = ()=>{
                 onMovieClick: (newSelectedMovie)=>{
                     setSelectedMovie(newSelectedMovie);
                 }
-            }, movie._id, false, {
+            }, movie.id, false, {
                 fileName: "src/components/MainView/MainView.jsx",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 11
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 53,
+        lineNumber: 54,
         columnNumber: 7
     }, undefined);
 } /* ----- MOVIE ARRAY FROM EARLIER EXERCISE -----
@@ -27476,7 +27477,6 @@ _c = MovieCard;
 // Define prop constraints for MovieCard
 MovieCard.propTypes = {
     movie: (0, _propTypesDefault.default).shape({
-        id: (0, _propTypesDefault.default).number,
         title: (0, _propTypesDefault.default).string.isRequired,
         year: (0, _propTypesDefault.default).string,
         length: (0, _propTypesDefault.default).string,
