@@ -27293,7 +27293,6 @@ const MainView = ()=>{
     // Load data from API
     (0, _react.useEffect)(()=>{
         fetch("https://female-filmmakers.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
-            console.log(data);
             const moviesFromApi = data.map((movie)=>{
                 return {
                     id: movie._id,
@@ -27315,7 +27314,7 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 39,
+        lineNumber: 38,
         columnNumber: 7
     }, undefined);
     // Return a text message if array is empty
@@ -27323,7 +27322,7 @@ const MainView = ()=>{
         children: "No movies available!"
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 50,
+        lineNumber: 49,
         columnNumber: 12
     }, undefined);
     else // Return clickable MovieCard component for each movie
@@ -27335,12 +27334,12 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/MainView/MainView.jsx",
-                lineNumber: 56,
+                lineNumber: 55,
                 columnNumber: 11
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 54,
+        lineNumber: 53,
         columnNumber: 7
     }, undefined);
 } /* ----- MOVIE ARRAY FROM EARLIER EXERCISE -----

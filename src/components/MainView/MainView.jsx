@@ -16,7 +16,6 @@ export const MainView = () => {
     fetch('https://female-filmmakers.herokuapp.com/movies')
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         const moviesFromApi = data.map((movie) => {
           return {
             id: movie._id,
