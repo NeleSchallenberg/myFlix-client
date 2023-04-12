@@ -27303,7 +27303,7 @@ const MainView = ()=>{
                     description: movie.Description,
                     genre: movie.Genre.Name,
                     director: movie.Director.Name,
-                    imagePath: movie.ImagePath
+                    image: movie.ImagePath
                 };
             });
             setMovies(moviesFromApi);
@@ -27483,7 +27483,7 @@ MovieCard.propTypes = {
         description: (0, _propTypesDefault.default).string.isRequired,
         genre: (0, _propTypesDefault.default).string,
         director: (0, _propTypesDefault.default).string,
-        imagePath: (0, _propTypesDefault.default).string
+        image: (0, _propTypesDefault.default).string
     }).isRequired,
     onMovieClick: (0, _propTypesDefault.default).func.isRequired
 };
@@ -28290,7 +28290,7 @@ const MovieView = ({ movie , onBackClick  })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movie.imagePath,
+                    src: movie.image,
                     width: 1000
                 }, void 0, false, {
                     fileName: "src/components/MovieView/MovieView.jsx",
