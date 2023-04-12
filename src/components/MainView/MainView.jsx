@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
+import { LoginView } from '../LoginView/LoginView';
 
 // Expose MainView component
 export const MainView = () => {
