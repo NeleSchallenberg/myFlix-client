@@ -2,6 +2,10 @@ import React from 'react';
 
 // Espose LoginView component
 export const LoginView = () => {
+
+  // Import useState
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');  
   
   // Add username and password verification 
   const handleSubmit = (event) => {
