@@ -28471,14 +28471,29 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$0aaf.prelude(module);
 
 try {
-// Espose LoginView component
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "LoginView", ()=>LoginView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 const LoginView = ()=>{
+    // Add username and password verification 
+    const handleSubmit = (event)=>{
+        // Prevent default behaviour of form
+        event.preventDefault();
+        const data = {
+            access: username,
+            secret: password
+        };
+        fetch("https://female-filmmakers.herokuapp.com/login.json", {
+            method: "POST",
+            body: JSON.stringify(data)
+        });
+    };
     // Create LoginView component
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+        onSubmit: handleSubmit,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                 children: [
@@ -28487,13 +28502,13 @@ const LoginView = ()=>{
                         type: "text"
                     }, void 0, false, {
                         fileName: "src/components/LoginView/LoginView.jsx",
-                        lineNumber: 9,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/LoginView/LoginView.jsx",
-                lineNumber: 7,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -28503,13 +28518,13 @@ const LoginView = ()=>{
                         type: "password"
                     }, void 0, false, {
                         fileName: "src/components/LoginView/LoginView.jsx",
-                        lineNumber: 13,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/LoginView/LoginView.jsx",
-                lineNumber: 11,
+                lineNumber: 29,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -28517,13 +28532,13 @@ const LoginView = ()=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/LoginView/LoginView.jsx",
-                lineNumber: 15,
+                lineNumber: 33,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/LoginView/LoginView.jsx",
-        lineNumber: 6,
+        lineNumber: 24,
         columnNumber: 5
     }, undefined);
 };
@@ -28536,6 +28551,6 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf"}]},["cC5yv","4VzsO","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","react":"21dqq"}]},["cC5yv","4VzsO","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
