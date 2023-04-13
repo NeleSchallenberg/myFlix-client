@@ -5,6 +5,7 @@ export const LoginView = () => {
   
   // Add username and password verification 
   const handleSubmit = (event) => {
+
     // Prevent default behaviour of form
     event.preventDefault();
 
@@ -18,17 +19,25 @@ export const LoginView = () => {
       body: JSON.stringify(data)
     });
   };
-
+  
   // Create LoginView component
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Username:
-        <input type='text'/>
+        <input 
+          type='text'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
       </label>
       <label>
         Password:
-        <input type='password'/>
+        <input 
+          type='password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </label>
       <button type='submit'>Submit</button>
     </form>
