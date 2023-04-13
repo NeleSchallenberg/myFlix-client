@@ -32,9 +32,9 @@ export const MainView = () => {
       });
   }, []);
 
-  // Display LoginView when no user is logged in
+  // Display LoginView when no user is logged in and update on login
   if (!user) {
-    return <LoginView />
+    return <LoginView onLoggedIn={(user) => setUser(user)}/>
   }
   
   // Render MovieView component when a movie card is clicked

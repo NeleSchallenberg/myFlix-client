@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Espose LoginView component
-export const LoginView = () => {
+export const LoginView = ({ onLoggedIn }) => {
 
   // Import useState
   const [username, setUsername] = useState('');
@@ -21,6 +21,12 @@ export const LoginView = () => {
     fetch('https://female-filmmakers.herokuapp.com/login.json', {
       method: 'POST',
       body: JSON.stringify(data)
+    }).then((response) => {
+      if (response.ok) {
+        onLoggedIn(username)
+      } else {
+        alert('Login failed!')
+      }
     });
   };
   
