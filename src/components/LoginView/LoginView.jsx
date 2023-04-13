@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 // Espose LoginView component
 export const LoginView = ({ onLoggedIn }) => {
@@ -39,6 +39,8 @@ export const LoginView = ({ onLoggedIn }) => {
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          required
+          minlength='4'
         />
       </label>
       <label>
@@ -47,6 +49,8 @@ export const LoginView = ({ onLoggedIn }) => {
           type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
+          minlength='8'
         />
       </label>
       <button type='submit'>Submit</button>
