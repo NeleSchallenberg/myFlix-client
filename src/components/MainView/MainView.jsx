@@ -1,13 +1,74 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
 
-// Exposing MainView component
+// Expose MainView component
 export const MainView = () => {
 
-  // Creating MainView component
-  const [movies] = useState([
-    // Array of movies
+  // Create MainView component
+  const [movies, setMovies] = useState([]);
+
+  // Add new state variable with initial value of null (no book cards were clicked)
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  // Load data from API
+  useEffect(() => {
+    fetch('https://female-filmmakers.herokuapp.com/movies')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const moviesFromApi = data.map((movie) => {
+          return {
+            id: movie._id,
+            title: movie.Title,
+            year: movie.Year,
+            length: movie.Length,
+            description: movie.Description,
+            genre: movie.Genre.Name,
+            director: movie.Director.Name,
+            image: movie.ImagePath
+          };
+        });
+        setMovies(moviesFromApi);
+      });
+  }, []);
+  
+  // Render MovieView component when a movie card is clicked
+  if (selectedMovie) {
+    return (
+      <MovieView
+        movie={selectedMovie}
+        onBackClick={() =>
+          setSelectedMovie(null)
+        }
+      />
+    )
+  };
+
+  // Return a text message if array is empty
+  if (movies.length === 0) {
+    return <div>No movies available!</div>
+  } else {
+    // Return clickable MovieCard component for each movie
+    return (
+      <div>
+        {movies.map((movie) => (
+          <MovieCard 
+            key={movie.id}
+            movie={movie}
+            onMovieClick={(newSelectedMovie) => {
+              setSelectedMovie(newSelectedMovie)
+            }}
+          />
+        ))}
+      </div>
+    )
+  };
+}
+
+
+/* ----- MOVIE ARRAY FROM EARLIER EXERCISE -----
+
     {
       id: 1,
       title: "Lady Bird",
@@ -98,40 +159,4 @@ export const MainView = () => {
       imagePath: "https://images.mubicdn.net/images/film/1719/cache-9011-1620312993/image-w1280.jpg?size=1280x"
     }
 
-  ]);
-
-  // Adding new state variable with initial value of null (no book cards were clicked)
-  const [selectedMovie, setSelectedMovie] = useState(null);
-  
-  // Rendering MovieView component when a movie card is clicked
-  if (selectedMovie) {
-    return (
-      <MovieView
-        movie={selectedMovie}
-        onBackClick={() =>
-          setSelectedMovie(null)
-        }
-      />
-    )
-  };
-
-  // Returning a text message if array is empty
-  if (movies.length === 0) {
-    return <div>No movies available!</div>
-  } else {
-    // Returning clickable MovieCard component for each movie
-    return (
-      <div>
-        {movies.map((movie) => (
-          <MovieCard 
-            key={movie.id}
-            movie={movie}
-            onMovieClick={(newSelectedMovie) => {
-              setSelectedMovie(newSelectedMovie)
-            }}
-          />
-        ))}
-      </div>
-    )
-  };
-}
+    */
