@@ -10,10 +10,16 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
 
   // Load data from API
   useEffect(() => {
-    fetch('https://female-filmmakers.herokuapp.com/movies')
+    if (!token) {
+      return
+    }
+    fetch('https://female-filmmakers.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
       .then((response) => response.json())
       .then((data) => {
         const moviesFromApi = data.map((movie) => {
@@ -30,11 +36,22 @@ export const MainView = () => {
         });
         setMovies(moviesFromApi);
       });
-  }, []);
+  }, [token]);
+
+  
+
+  
 
   // Display LoginView when no user is logged in and update on login
   if (!user) {
-    return <LoginView onLoggedIn={(user) => setUser(user)}/>
+    return (
+      <LoginView 
+        onLoggedIn={(user, token) => {
+          setUser(user)
+          setToken(token)
+        }}
+      />
+    )
   }
   
   // Render MovieView component when a movie card is clicked
@@ -65,7 +82,13 @@ export const MainView = () => {
             }}
           />
         ))}
-        <button onClick={() => {setUser(null)}}>Logout</button>
+        <button 
+          onClick={() => {
+            setUser(null) 
+            setToken(null)
+          }}
+          >Logout
+        </button>
       </div>
     )
   };
