@@ -27287,14 +27287,23 @@ var _loginView = require("../LoginView/LoginView");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
+    // Use localStorage as default value
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedToken = localStorage.getItem("token");
+    const [user, setUser] = (0, _react.useState)(null);
+    const [token, setToken] = (0, _react.useState)(null);
     // Add state variables to components
     const [movies, setMovies] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    const [user, setUser] = (0, _react.useState)(null);
     // Load data from API
     (0, _react.useEffect)(()=>{
-        fetch("https://female-filmmakers.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
-            const moviesFromApi = data.map((movie)=>{
+        if (!token) return;
+        fetch("https://female-filmmakers.herokuapp.com/movies", {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>response.json()).then((movies)=>{
+            const moviesFromApi = movies.map((movie)=>{
                 return {
                     id: movie._id,
                     title: movie.Title,
@@ -27308,14 +27317,19 @@ const MainView = ()=>{
             });
             setMovies(moviesFromApi);
         });
-    }, []);
+    }, [
+        token
+    ]);
     // Display LoginView when no user is logged in and update on login
     if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
-        onLoggedIn: (user)=>setUser(user)
+        onLoggedIn: (user, token)=>{
+            setUser(user);
+            setToken(token);
+        }
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 37,
-        columnNumber: 12
+        lineNumber: 48,
+        columnNumber: 7
     }, undefined);
     // Render MovieView component when a movie card is clicked
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -27323,7 +27337,7 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 43,
+        lineNumber: 60,
         columnNumber: 7
     }, undefined);
     // Return a text message if array is empty
@@ -27331,7 +27345,7 @@ const MainView = ()=>{
         children: "No movies available!"
     }, void 0, false, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 54,
+        lineNumber: 71,
         columnNumber: 12
     }, undefined);
     else // Return clickable MovieCard component for each movie
@@ -27344,27 +27358,29 @@ const MainView = ()=>{
                     }
                 }, movie.id, false, {
                     fileName: "src/components/MainView/MainView.jsx",
-                    lineNumber: 60,
+                    lineNumber: 77,
                     columnNumber: 11
                 }, undefined)),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 onClick: ()=>{
                     setUser(null);
+                    setToken(null);
+                    localStorage.clear();
                 },
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/components/MainView/MainView.jsx",
-                lineNumber: 68,
+                lineNumber: 85,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/MainView/MainView.jsx",
-        lineNumber: 58,
+        lineNumber: 75,
         columnNumber: 7
     }, undefined);
 };
-_s(MainView, "AA2Lbd5vppiQn5Rpxq/geFPiCys=");
+_s(MainView, "qXlxSr1HRHFcq0wZllxU017V8qo=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -28412,72 +28428,81 @@ const LoginView = ({ onLoggedIn  })=>{
             access: username,
             secret: password
         };
-        fetch("https://female-filmmakers.herokuapp.com/login.json", {
+        fetch("https://female-filmmakers.herokuapp.com/login", {
             method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(data)
-        }).then((response)=>{
-            if (response.ok) onLoggedIn(username);
-            else alert("Login failed!");
+        }).then((response)=>response.json()).then((data)=>{
+            console.log("Login response: ", data);
+            if (data.user) {
+                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("token", data.token);
+                onLoggedIn(data.user, data.token);
+            } else alert("No such user!");
+        }).catch((e)=>{
+            alert("Something went wrong!");
         });
+        // Create LoginView component
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+            onSubmit: handleSubmit,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                    children: [
+                        "Username:",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            type: "text",
+                            value: username,
+                            onChange: (e)=>setUsername(e.target.value),
+                            required: true,
+                            minlength: "4"
+                        }, void 0, false, {
+                            fileName: "src/components/LoginView/LoginView.jsx",
+                            lineNumber: 47,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/LoginView/LoginView.jsx",
+                    lineNumber: 45,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                    children: [
+                        "Password:",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            type: "password",
+                            value: password,
+                            onChange: (e)=>setPassword(e.target.value),
+                            required: true,
+                            minlength: "8"
+                        }, void 0, false, {
+                            fileName: "src/components/LoginView/LoginView.jsx",
+                            lineNumber: 57,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/LoginView/LoginView.jsx",
+                    lineNumber: 55,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    type: "submit",
+                    children: "Submit"
+                }, void 0, false, {
+                    fileName: "src/components/LoginView/LoginView.jsx",
+                    lineNumber: 65,
+                    columnNumber: 7
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/LoginView/LoginView.jsx",
+            lineNumber: 44,
+            columnNumber: 5
+        }, undefined);
     };
-    // Create LoginView component
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-        onSubmit: handleSubmit,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                children: [
-                    "Username:",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value),
-                        required: true,
-                        minlength: "4"
-                    }, void 0, false, {
-                        fileName: "src/components/LoginView/LoginView.jsx",
-                        lineNumber: 38,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/LoginView/LoginView.jsx",
-                lineNumber: 36,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                children: [
-                    "Password:",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value),
-                        required: true,
-                        minlength: "8"
-                    }, void 0, false, {
-                        fileName: "src/components/LoginView/LoginView.jsx",
-                        lineNumber: 48,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/LoginView/LoginView.jsx",
-                lineNumber: 46,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                type: "submit",
-                children: "Submit"
-            }, void 0, false, {
-                fileName: "src/components/LoginView/LoginView.jsx",
-                lineNumber: 56,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/LoginView/LoginView.jsx",
-        lineNumber: 35,
-        columnNumber: 5
-    }, undefined);
 };
 _s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
 _c = LoginView;

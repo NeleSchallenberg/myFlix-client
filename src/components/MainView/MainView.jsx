@@ -42,10 +42,6 @@ export const MainView = () => {
       });
   }, [token]);
 
-  
-
-  
-
   // Display LoginView when no user is logged in and update on login
   if (!user) {
     return (
