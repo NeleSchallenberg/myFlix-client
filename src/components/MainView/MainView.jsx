@@ -88,8 +88,9 @@ export const MainView = () => {
         ))}
         <button 
           onClick={() => {
-            setUser(null) 
-            setToken(null)
+            setUser(null); 
+            setToken(null);
+            localStorage.clear()
           }}
           >Logout
         </button>
