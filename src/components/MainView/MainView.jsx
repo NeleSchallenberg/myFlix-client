@@ -6,23 +6,27 @@ import { LoginView } from '../LoginView/LoginView';
 // Expose MainView component
 export const MainView = () => {
 
-  // Add state variables to components
-  const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
+  // Use localStorage as default value
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+  const storedToken = localStorage.getItem('token');
+
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
 
+  // Add state variables to components
+  const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
   // Load data from API
   useEffect(() => {
-    if (!token) {
-      return
-    }
+    if (!token) return;
+
     fetch('https://female-filmmakers.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
       .then((response) => response.json())
-      .then((data) => {
-        const moviesFromApi = data.map((movie) => {
+      .then((movies) => {
+        const moviesFromApi = movies.map((movie) => {
           return {
             id: movie._id,
             title: movie.Title,
