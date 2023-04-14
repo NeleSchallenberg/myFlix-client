@@ -5,7 +5,7 @@ export const SignupView = () => {
   // Creating SignupView component with event handler
   return (
     <form onSubmit={handleSubmit}>
-      <button type='submit'>Submit</button>
+      <button type='submit'>Sign up</button>
     </form>
   )
 }

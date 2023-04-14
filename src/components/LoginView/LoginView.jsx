@@ -37,8 +37,9 @@ export const LoginView = ({ onLoggedIn }) => {
       })
       .catch((e) => {
         alert('Something went wrong!')
-      });
-  
+    });
+  };
+
   // Create LoginView component
   return (
     <form onSubmit={handleSubmit}>
@@ -49,7 +50,7 @@ export const LoginView = ({ onLoggedIn }) => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          minlength='4'
+          minLength='4'
         />
       </label>
       <label>
@@ -59,10 +60,10 @@ export const LoginView = ({ onLoggedIn }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          minlength='8'
+          minLength='8'
         />
       </label>
-      <button type='submit'>Submit</button>
+      <button type='submit'>Login</button>
     </form>
-  )
-}}
+  );
+}

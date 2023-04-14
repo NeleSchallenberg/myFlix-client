@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
 import { LoginView } from '../LoginView/LoginView';
+import { SignupView } from '../SignupView/SignupView';
 
 // Expose MainView component
 export const MainView = () => {
@@ -45,12 +46,15 @@ export const MainView = () => {
   // Display LoginView when no user is logged in and update on login
   if (!user) {
     return (
-      <LoginView 
-        onLoggedIn={(user, token) => {
-          setUser(user)
-          setToken(token)
-        }}
-      />
+      <>
+        <LoginView 
+          onLoggedIn={(user, token) => {
+            setUser(user)
+            setToken(token)
+          }} />
+        or
+        <SignupView />
+      </>
     )
   }
   
