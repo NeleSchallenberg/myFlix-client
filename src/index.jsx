@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 
 const MyFlixApplication = () => {
   return (
-    <Container style={{border: '1px solid lightgrey'}}>
+    <Container style={{border: '3px solid lightgrey'}}>
       <MainView />
     </Container>
   )

@@ -4,6 +4,7 @@ import { MovieView } from '../MovieView/MovieView';
 import { LoginView } from '../LoginView/LoginView';
 import { SignupView } from '../SignupView/SignupView';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 // Expose MainView component
 export const MainView = () => {
@@ -45,10 +46,10 @@ export const MainView = () => {
 
   // Wrap if statements in react-bootstrap row
   return (
-    <Row>
+    <Row className='justify-content-md-center' style={{border: '1px solid green'}}>
       {
         !user ? (
-          <>
+          <Col md={5} style={{border: '1px solid red'}}>
             <LoginView 
               onLoggedIn={(user, token) => {
                 setUser(user)
@@ -56,24 +57,28 @@ export const MainView = () => {
               }} />
             or
             <SignupView />
-          </>
+          </Col>
         ) : selectedMovie ? (
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={() => setSelectedMovie(null)}
-          />
+            <Col md={8} style={{border: '1px solid red'}}>
+              <MovieView
+                movie={selectedMovie}
+                onBackClick={() => setSelectedMovie(null)}
+              />
+            </Col>
         ) : movies.length === 0 ? (
           <div>No movies available!</div>
         ) : (
           <>
             {movies.map((movie) => (
-              <MovieCard 
-                key={movie.id}
-                movie={movie}
-                onMovieClick={(newSelectedMovie) => {
-                  setSelectedMovie(newSelectedMovie)
-                }}
-              />
+              <Col md={8} style={{border: '1px solid red'}}>
+                <MovieCard 
+                  key={movie.id}
+                  movie={movie}
+                  onMovieClick={(newSelectedMovie) => {
+                    setSelectedMovie(newSelectedMovie)
+                  }}
+                />
+              </Col>
             ))}
           </>
         )
