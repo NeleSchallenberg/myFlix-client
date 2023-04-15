@@ -14,8 +14,8 @@ export const LoginView = ({ onLoggedIn }) => {
     event.preventDefault();
 
     const data = {
-      access: username,
-      secret: password
+      Username: username,
+      Password: password
     };
 
     fetch('https://female-filmmakers.herokuapp.com/login', {
