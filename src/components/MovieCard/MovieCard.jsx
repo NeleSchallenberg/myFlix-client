@@ -1,7 +1,8 @@
 // Import prop-types library
 import PropTypes from "prop-types";
 // Import react-bootstrap components
-import { Button, Card } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 // Exposing MovieCard component
 export const MovieCard = ({movie, onMovieClick}) => {
