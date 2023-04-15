@@ -3,25 +3,24 @@ import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
 import { LoginView } from '../LoginView/LoginView';
 import { SignupView } from '../SignupView/SignupView';
+import Row from 'react-bootstrap/Row';
 
 // Expose MainView component
 export const MainView = () => {
+
+   // Add state variables to components
+   const [movies, setMovies] = useState([]);
+   const [selectedMovie, setSelectedMovie] = useState(null);
+   const [user, setUser] = useState(null);
+   const [token, setToken] = useState(null);
 
   // Use localStorage as default value
   const storedUser = JSON.parse(localStorage.getItem('user'));
   const storedToken = localStorage.getItem('token');
 
-  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
-
-  // Add state variables to components
-  const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
-
-  // Load data from API
+  // Load data from API if user is authorized
   useEffect(() => {
     if (!token) return;
-
     fetch('https://female-filmmakers.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
@@ -44,58 +43,41 @@ export const MainView = () => {
       });
   }, [token]);
 
-  // Display LoginView when no user is logged in and update on login
-  if (!user) {
-    return (
-      <>
-        <LoginView 
-          onLoggedIn={(user, token) => {
-            setUser(user)
-            setToken(token)
-          }} />
-        or
-        <SignupView />
-      </>
-    )
-  }
-  
-  // Render MovieView component when a movie card is clicked
-  if (selectedMovie) {
-    return (
-      <MovieView
-        movie={selectedMovie}
-        onBackClick={() =>
-          setSelectedMovie(null)
-        }
-      />
-    )
-  };
-
-  // Return a text message if array is empty
-  if (movies.length === 0) {
-    return <div>No movies available!</div>
-  } else {
-    // Return clickable MovieCard component for each movie
-    return (
-      <div>
-        {movies.map((movie) => (
-          <MovieCard 
-            key={movie.id}
-            movie={movie}
-            onMovieClick={(newSelectedMovie) => {
-              setSelectedMovie(newSelectedMovie)
-            }}
+  // Wrap if statements in react-bootstrap Row
+  return (
+    <Row>
+      {
+        !user ? (
+          <>
+            <LoginView 
+              onLoggedIn={(user, token) => {
+                setUser(user)
+                setToken(token)
+              }} />
+            or
+            <SignupView />
+          </>
+        ) : selectedMovie ? (
+          <MovieView
+            movie={selectedMovie}
+            onBackClick={() => setSelectedMovie(null)}
           />
-        ))}
-        <button 
-          onClick={() => {
-            setUser(null); 
-            setToken(null);
-            localStorage.clear()
-          }}
-          >Logout
-        </button>
-      </div>
-    )
-  };
-}
+        ) : movies.length === 0 ? (
+          <div>No movies available!</div>
+        ) : (
+          <>
+            {movies.map((movie) => (
+              <MovieCard 
+                key={movie.id}
+                movie={movie}
+                onMovieClick={(newSelectedMovie) => {
+                  setSelectedMovie(newSelectedMovie)
+                }}
+              />
+            ))}
+          </>
+        )
+      }
+    </Row>
+  )
+};
