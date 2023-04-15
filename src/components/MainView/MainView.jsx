@@ -43,7 +43,7 @@ export const MainView = () => {
       });
   }, [token]);
 
-  // Wrap if statements in react-bootstrap Row
+  // Wrap if statements in react-bootstrap row
   return (
     <Row>
       {
