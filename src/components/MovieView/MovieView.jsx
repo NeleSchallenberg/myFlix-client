@@ -1,45 +1,42 @@
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Stack from 'react-bootstrap/Stack'
+
 // Exposing MovieView component
 export const MovieView = ({movie, onBackClick}) => {
   // Creating MovieView component
   return (
-    <div>
-      
-      <div>
-        <img width={'100%'} src={movie.image} />
-      </div>
+    <Container>
+      <Row className='mt-4 justify-content-center'>
+        <Col md={8}>
+          <img className="w-100" src={movie.image} />
+          <br></br>
+          <br></br>
+          <h1>{movie.title}</h1>
+          <Stack direction='horizontal' gap={3}>
+            <div className='bg-light border px-1'>{movie.year}</div>
+            <div className='bg-light border px-1'> {movie.length} </div>
+            <div className='bg-light border px-1'> {movie.genre} </div>
+          </Stack>
+          <br></br>
+          <p>{movie.description}</p>
+          <div>
+            <span>Directed by </span>
+            <span style={{fontWeight: 'bold'}}>{movie.director}</span>
+          </div>
+          <br></br>
+          <Button
+            onClick={onBackClick}
+            variant='primary'
+            className='mt-2'
+          >Back
+          </Button>
+        </Col>
 
-      <div>
-        <span>Title: </span>
-        <span>{movie.title}</span>
-      </div>
 
-      <div>
-        <span>Year: </span>
-        <span>{movie.year}</span>
-      </div>
-
-      <div>
-        <span>Length: </span>
-        <span>{movie.length}</span>
-      </div>
-
-      <div>
-        <span>Description: </span>
-        <span>{movie.description}</span>
-      </div>
-
-      <div>
-        <span>Genre: </span>
-        <span>{movie.genre}</span>
-      </div>
-
-      <div>
-        <span>Director: </span>
-        <span>{movie.director}</span>
-      </div>
-
-      <button onClick={onBackClick}>Back</button>
-
-    </div>
+      </Row>
+    </Container>
   )
 }

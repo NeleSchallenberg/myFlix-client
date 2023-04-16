@@ -40,9 +40,11 @@ export const SignupView = () => {
 
   // Creating SignupView component with event handler
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className='mt-5'>
 
-      <Form.Group controlId='formUsername'>
+      <h1 className='mb-3'>Sign Up</h1>
+
+      <Form.Group className='mb-3' controlId='formUsername'>
         <Form.Label>Username:</Form.Label>
         <Form.Control 
           type='text'
@@ -53,7 +55,7 @@ export const SignupView = () => {
         />
       </Form.Group>
 
-      <Form.Group controlId='formPassword'>
+      <Form.Group className='mb-3' controlId='formPassword'>
         <Form.Label>Password:</Form.Label>
         <Form.Control 
           type='password'
@@ -63,7 +65,7 @@ export const SignupView = () => {
         />
       </Form.Group>
 
-      <Form.Group controlId='formEmail'>
+      <Form.Group className='mb-3' controlId='formEmail'>
         <Form.Label>Email:</Form.Label>
         <Form.Control
           type='email'
@@ -73,7 +75,7 @@ export const SignupView = () => {
         />
       </Form.Group>
 
-      <Form.Group controlId='formBirthday'>
+      <Form.Group className='mb-3' controlId='formBirthday'>
         <Form.Label>Birthday:</Form.Label>
         <Form.Control
           type='date'
@@ -83,8 +85,12 @@ export const SignupView = () => {
         />
       </Form.Group>
 
-      <Form.Group>
-        <Button variant='secondary' type='submit'>Sign up</Button>
+      <Form.Group className='mb-3'>
+        <Button 
+          className='mt-2'
+          variant='primary' 
+          type='submit'
+        >Submit</Button>
       </Form.Group>
 
     </Form>

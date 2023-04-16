@@ -29,7 +29,6 @@ export const LoginView = ({ onLoggedIn }) => {
     }).then((response) => response.json())
       .then((data) => {
         if (data.user) {
-          console.log('Bug fixed')
           localStorage.setItem('user', JSON.stringify(data.user));
           localStorage.setItem('token', data.token);
           onLoggedIn(data.user, data.token);
@@ -45,8 +44,10 @@ export const LoginView = ({ onLoggedIn }) => {
   // Create LoginView component
   return (
     <Form onSubmit={handleSubmit}>
-
-      <Form.Group controlId='formUsername'>
+      
+      <h1 className='mb-3'>Login</h1>
+      
+      <Form.Group className='mb-3' controlId='formUsername'>
         <Form.Label>Username:</Form.Label>
         <Form.Control
           type='text'
@@ -57,7 +58,7 @@ export const LoginView = ({ onLoggedIn }) => {
         />
       </Form.Group>
       
-      <Form.Group controlId='formPassword'>
+      <Form.Group className='mb-3' controlId='formPassword'>
         <Form.Label>Password:</Form.Label>
         <Form.Control
           type='password'
@@ -68,8 +69,12 @@ export const LoginView = ({ onLoggedIn }) => {
         />
       </Form.Group>
 
-      <Form.Group>
-        <Button variant='secondary' type='submit'>Login</Button>
+      <Form.Group className='mb-3'>
+        <Button
+          variant='primary' 
+          type='submit'
+          className='mt-2'
+          >Submit</Button>
       </Form.Group>
 
     </Form>

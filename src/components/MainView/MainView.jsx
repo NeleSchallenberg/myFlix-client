@@ -27,7 +27,6 @@ export const MainView = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         const moviesFromApi = data.map((movie) => {
           return {
             id: movie._id,
@@ -46,20 +45,19 @@ export const MainView = () => {
 
   // Wrap if statements in react-bootstrap row
   return (
-    <Row className='justify-content-md-center' style={{border: '1px solid green'}}>
+    <Row className='justify-content-center mt-5 mx-4'>
       {
         !user ? (
-          <Col md={5} style={{border: '1px solid red'}}>
+          <Col md={4}>
             <LoginView 
               onLoggedIn={(user, token) => {
                 setUser(user)
                 setToken(token)
               }} />
-            or
             <SignupView />
           </Col>
         ) : selectedMovie ? (
-            <Col md={8} style={{border: '1px solid red'}}>
+            <Col>
               <MovieView
                 movie={selectedMovie}
                 onBackClick={() => setSelectedMovie(null)}
@@ -70,7 +68,12 @@ export const MainView = () => {
         ) : (
           <>
             {movies.map((movie) => (
-              <Col md={8} style={{border: '1px solid red'}}>
+              <Col 
+                key={movie.id} 
+                md={4}
+                sm={6}
+                className={'mb-4'}
+                >
                 <MovieCard 
                   key={movie.id}
                   movie={movie}

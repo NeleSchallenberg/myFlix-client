@@ -9,6 +9,7 @@ export const MovieCard = ({movie, onMovieClick}) => {
   // Creating MovieCard component
   return (
     <Card
+      className='h-100'
       onClick={() => {
         onMovieClick(movie)
       }}
@@ -17,7 +18,7 @@ export const MovieCard = ({movie, onMovieClick}) => {
       <Card.Body>
         <Card.Title>{movie.title}</Card.Title>
         <Card.Subtitle>{movie.director}</Card.Subtitle>
-        <Card.Text>{movie.description}</Card.Text>
+        <Card.Text>{movie.genre}</Card.Text>
       </Card.Body>
     </Card>
   )
