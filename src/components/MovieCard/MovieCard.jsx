@@ -1,30 +1,26 @@
-// Import prop-types library
-import PropTypes from "prop-types";
-// Import react-bootstrap components
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
-// Exposing MovieCard component
-export const MovieCard = ({movie, onMovieClick}) => {
-  // Creating MovieCard component
+export const MovieCard = ({ movie }) => {
   return (
-    <Card
-      className='h-100'
-      onClick={() => {
-        onMovieClick(movie)
-      }}
-    >
+    <Card className='h-100'>
       <Card.Img variant='top' src={movie.image} />
       <Card.Body>
         <Card.Title>{movie.title}</Card.Title>
         <Card.Subtitle>{movie.director}</Card.Subtitle>
         <Card.Text>{movie.genre}</Card.Text>
+        <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+          <Button variant='link'>Open</Button>
+        </Link>
       </Card.Body>
     </Card>
   )
 }
 
-// Define prop constraints for MovieCard
+// PROP CONSTRAINTS
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,
@@ -34,6 +30,5 @@ MovieCard.propTypes = {
     genre: PropTypes.string,
     director: PropTypes.string,
     image: PropTypes.string
-  }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+  }).isRequired
 };
