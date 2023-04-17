@@ -3,24 +3,19 @@ import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
 import { LoginView } from '../LoginView/LoginView';
 import { SignupView } from '../SignupView/SignupView';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-// Expose MainView component
-export const MainView = () => {
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-   // Add state variables to components
+export const MainView = () => {
    const [movies, setMovies] = useState([]);
-   const [selectedMovie, setSelectedMovie] = useState(null);
    const [user, setUser] = useState(null);
    const [token, setToken] = useState(null);
 
-  // Use localStorage as default value
   const storedUser = JSON.parse(localStorage.getItem('user'));
   const storedToken = localStorage.getItem('token');
 
-  // Load data from API if user is authorized
   useEffect(() => {
     if (!token) return;
     fetch('https://female-filmmakers.herokuapp.com/movies', {
@@ -44,8 +39,6 @@ export const MainView = () => {
       });
   }, [token]);
 
-  // Wrap if statements in react-bootstrap row
-  // Add routes for different views
   return (
     <BrowserRouter>
       <Row className='justify-content-center mt-5 mx-4'>

@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 
 const MyFlixApplication = () => {
   return (
-    <Container>
+    <Container fluid>
       <MainView />
     </Container>
   )
