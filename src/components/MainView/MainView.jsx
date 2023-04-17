@@ -3,6 +3,7 @@ import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
 import { LoginView } from '../LoginView/LoginView';
 import { SignupView } from '../SignupView/SignupView';
+import { NavigationBar } from '../NavigationBar/NavigationBar';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Row from 'react-bootstrap/Row';
@@ -41,6 +42,14 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
+
+      <NavigationBar
+        user={user}
+        onLoggedOut={() => {
+          setUser(null)
+        }}
+      />
+      
       <Row className='justify-content-center mt-5 mx-4'>
         <Routes>
 
