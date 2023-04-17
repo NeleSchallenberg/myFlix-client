@@ -1,17 +1,13 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
-// Expose SignupView component
 export const SignupView = () => {
 
-  // Add state variables for input fields
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
-  // Event handler for submitting
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -38,7 +34,6 @@ export const SignupView = () => {
     });
   };
 
-  // Creating SignupView component with event handler
   return (
     <Form onSubmit={handleSubmit} className='mt-5'>
 
