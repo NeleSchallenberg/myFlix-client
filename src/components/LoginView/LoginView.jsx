@@ -2,17 +2,11 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-// Espose LoginView component
 export const LoginView = ({ onLoggedIn }) => {
-
-  // Import useState
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');  
-  
-  // Add username and password verification 
-  const handleSubmit = (event) => {
+  const [password, setPassword] = useState('');
 
-    // Prevent default behaviour of form
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     const data = {
@@ -41,9 +35,8 @@ export const LoginView = ({ onLoggedIn }) => {
     });
   };
 
-  // Create LoginView component
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className='mt-5'>
       
       <h1 className='mb-3'>Login</h1>
       

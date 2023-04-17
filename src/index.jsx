@@ -1,8 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { MainView } from './components/MainView/MainView';
-// import "bootstrap/dist/css/bootstrap.min.css";
-import "./custom.scss";
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
+import "./index.scss";
 
 const MyFlixApplication = () => {
   return (
@@ -14,5 +13,4 @@ const MyFlixApplication = () => {
 
 const container = document.querySelector("#root");
 const root = createRoot(container);
-
 root.render(<MyFlixApplication />);
