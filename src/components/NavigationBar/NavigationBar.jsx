@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
-    <Navbar bg='light' expand='lg'>
+    <Navbar expand='lg'>
       <Container fluid>
 
         <Navbar.Brand as={Link} to='/'>
-          <h1>female filmmakers</h1>
+          <h1 className='header'>female filmmakers</h1>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-aria-controls='basic-navbar-nav'/>

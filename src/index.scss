@@ -10,13 +10,12 @@ GhostWhite
 
 --------------------------- */
 
-h1, h4 {
+.header {
   font-family: 'DM Serif Display';
 }
 
 $primary: Gainsboro;
 $body-bg: GhostWhite;
-
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap');
 @import '~bootstrap/scss/bootstrap.scss';
