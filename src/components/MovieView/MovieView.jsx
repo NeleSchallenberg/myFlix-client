@@ -5,7 +5,6 @@ import Stack from 'react-bootstrap/Stack'
 
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import './MovieView.scss';
 
 export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
@@ -31,14 +30,12 @@ export const MovieView = ({ movies }) => {
           <span style={{fontWeight: 'bold'}}>{movie.director}</span>
         </div>
         <br></br>
-        <div>
-          <Link to={`/`}>
-            <Button
-              variant='primary'
-            >Back
-            </Button>
-          </Link>
-        </div>
+        <Link to={`/`}>
+          <Button
+            variant='primary'
+          >Back
+          </Button>
+        </Link>
       </div>
     </Row>
   )
