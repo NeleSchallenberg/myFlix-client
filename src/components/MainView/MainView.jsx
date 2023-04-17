@@ -3,6 +3,7 @@ import { MovieCard } from '../MovieCard/MovieCard';
 import { MovieView } from '../MovieView/MovieView';
 import { LoginView } from '../LoginView/LoginView';
 import { SignupView } from '../SignupView/SignupView';
+import { ProfileView } from '../ProfileView/ProfileView';
 import { NavigationBar } from '../NavigationBar/NavigationBar';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
