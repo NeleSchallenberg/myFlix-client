@@ -6,9 +6,7 @@ import { SignupView } from '../SignupView/SignupView';
 import { ProfileView } from '../ProfileView/ProfileView';
 import { NavigationBar } from '../NavigationBar/NavigationBar';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Row, Col } from 'react-bootstrap';
 
 export const MainView = () => {
    const [movies, setMovies] = useState([]);
@@ -132,6 +130,20 @@ export const MainView = () => {
               </>
             }
           />
+
+          <Route
+            path='/profile'
+            element={
+              <>
+                {!user ? (
+                  <Navigate to='/login' replace />
+                ) : (
+                  <ProfileView />
+                )}
+              </>
+            }
+          />
+
         </Routes>
       </Row>
     </BrowserRouter>
