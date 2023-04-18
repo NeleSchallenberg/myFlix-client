@@ -10,7 +10,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
           <h1 className='header'>female filmmakers</h1>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-aria-controls='basic-navbar-nav'/>
+        <Navbar.Toggle aria-controls='basic-navbar-nav'/>
 
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>

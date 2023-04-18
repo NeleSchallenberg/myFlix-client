@@ -32543,7 +32543,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Toggle, {
-                    "aria-aria-controls": "basic-navbar-nav"
+                    "aria-controls": "basic-navbar-nav"
                 }, void 0, false, {
                     fileName: "src/components/NavigationBar/NavigationBar.jsx",
                     lineNumber: 13,
