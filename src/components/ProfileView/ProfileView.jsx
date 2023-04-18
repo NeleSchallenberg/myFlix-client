@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, Card, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export const ProfileView = () => {
@@ -19,33 +19,45 @@ export const ProfileView = () => {
       Birthday: birthday
     }
 
-    fetch('https://female-filmmakers.herokuapp.com/users', {
-      method: 'PUT',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((response) => {
-      if (response.ok) {
-        alert('Update successful!');
-        window.location.reload();
-      } else {
-        alert('Update failed.')
-      }
-    });
+  //   fetch('https://female-filmmakers.herokuapp.com/users', {
+  //     method: 'PUT',
+  //     body: JSON.stringify(data),
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }).then((response) => {
+  //     if (response.ok) {
+  //       alert('Update successful!');
+  //       window.location.reload();
+  //     } else {
+  //       alert('Update failed.')
+  //     }
+  //   });
   };
 
   return (
     <Container fluid>
       <Row>
         <Col sm={4}>
-          <h2 className='header'>Account Information</h2>
+          <Card>
+            <Card.Body>
+              <Card.Title>
+                <h2 className='header mb-3'>Your Account</h2>
+              </Card.Title>
+                <p>Username: </p>
+                <p>Email: </p>
+                <p>Birthday: </p>
+            </Card.Body>
+          </Card>
+
+          <h2 className='header mt-5'>Update Information</h2>
           <Form onSubmit={handleSubmit} className='mt-3'>
 
             <Form.Group className='mb-3' controlId='formUsername'>
-              <Form.Label>Username:</Form.Label>
+              
               <Form.Control 
                 type='text'
+                placeholder='Username'
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -54,9 +66,10 @@ export const ProfileView = () => {
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='formPassword'>
-              <Form.Label>Password:</Form.Label>
+              
               <Form.Control 
                 type='password'
+                placeholder='Password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -64,9 +77,10 @@ export const ProfileView = () => {
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='formEmail'>
-              <Form.Label>Email:</Form.Label>
+              
               <Form.Control
                 type='email'
+                placeholder='Email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -74,9 +88,10 @@ export const ProfileView = () => {
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='formBirthday'>
-              <Form.Label>Birthday:</Form.Label>
+              
               <Form.Control
                 type='date'
+                placeholder='Birthday'
                 value={birthday}
                 onChange={(e) => setBirthday(e.target.value)}
                 required
@@ -92,6 +107,12 @@ export const ProfileView = () => {
             </Form.Group>
 
           </Form>
+
+          <div className='mt-5'>
+            <Link to=''>
+              <p>Permanentely delete profile</p>
+            </Link>
+          </div>
         </Col>
 
         <Col sm={1}>
