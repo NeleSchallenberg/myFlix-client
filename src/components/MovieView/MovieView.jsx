@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { Container, Row, Col, Button, Stack } from 'react-bootstrap';
+import { Row, Col, Button, Stack } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { MovieCard } from '../MovieCard/MovieCard';
 
-export const MovieView = ({ movies }) => {
+export const MovieView = ({ movies, user, token, updateUser }) => {
   const { movieId } = useParams();
-  const movie = movies.find((movie) => movie.id === movieId);
-  const similarMovies = movies.filter((movie) => movie.genre === movie.genre ? true : false)
+  const movie = movies.find(m => m.id === movieId);
+  const similarMovies = movies.filter(movie => movie.genre === movie.genre ? true : false)
 
   return (
-    <Container>
+    <>
       <Row>
         <Col>
           <img className="w-100 mb-4" src={movie.image} />
@@ -38,7 +38,7 @@ export const MovieView = ({ movies }) => {
           </Col>
         ))}
       </Row>
-    </Container>
+    </>
   )
 }
 
