@@ -1,13 +1,34 @@
 import { useState } from 'react';
 import { Container, Row, Col, Button, Form, Card, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { MovieCard } from '../MovieCard/MovieCard';
 
-export const ProfileView = () => {
+export const ProfileView = ({ user, token, movies, onLoggedOut }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
+  // let favoriteMovies = movies.filter(movie => user.FavoriteMovies.includes(movie._id))
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const data = {
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: birthday
+    }
+
+    fetch(`https://female-filmmakers.herokuapp.com/users/${Username}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(console.log(data))
+  }
   return (
     <Container fluid>
       <Row>
@@ -17,7 +38,7 @@ export const ProfileView = () => {
               <Card.Title>
                 <h2 className='header mb-3'>Your Account</h2>
               </Card.Title>
-                <p>Username: </p>
+                <p>Username: {}</p>
                 <p>Email: </p>
                 <p>Birthday: </p>
             </Card.Body>
@@ -75,6 +96,11 @@ export const ProfileView = () => {
 
         <Col sm={6}>
           <h2 className='mt-2 header'>Favourites</h2>
+          {/* {favoriteMovies.map(movie => (
+            <Col key={movie.id} sm={6} md={4} lg={3} className='mb-4'>
+              <MovieCard movie={movie} />
+            </Col>
+          ))} */}
         </Col>
 
       </Row>
