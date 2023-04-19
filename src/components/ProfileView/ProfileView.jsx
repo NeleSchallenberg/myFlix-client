@@ -48,8 +48,24 @@ export const ProfileView = ({ user, token, movie, movies, onLoggedOut, updateUse
     })
   }
 
+  const deleteAccount = () => {
+    fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}`, {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('Your profile was successfully deleted!')
+        onLoggedOut()
+      } else {
+        alert('Profile can not be deleted.')
+      }
+    })
+    .catch(e => {
+      alert(e)
+    })
+  }
 
-  
   return (
     <>
       <Col sm={4}>
@@ -110,9 +126,11 @@ export const ProfileView = ({ user, token, movie, movies, onLoggedOut, updateUse
             >Update
             </Button>
         </Form>
-          <Link to='' className='mt-5'>
-            <p>Permanentely delete profile</p>
-          </Link>
+          <Link to='' className='mt-5' onClick={() => {
+            if (confirm('Delete profile permanentely?')) {
+              deleteAccount();
+            }
+          }}>Permanentely delete profile</Link>
       </Col>
 
       <Col sm={1}>
