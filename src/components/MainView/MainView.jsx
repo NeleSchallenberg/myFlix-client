@@ -94,11 +94,7 @@ export const MainView = () => {
                   ) : movies.length === 0 ? (
                     <Col>No movies available!</Col>
                   ) : (
-                    <MovieView 
-                      movies={movies}
-                      user={user}
-                      token={token}
-                    />
+                    <MovieView movies={movies} user={user} token={token} />
                   )}
                 </>
               }
