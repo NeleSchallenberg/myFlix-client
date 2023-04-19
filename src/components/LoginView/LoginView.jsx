@@ -1,6 +1,6 @@
+import React from 'react';
 import { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { Form, Button } from 'react-bootstrap';
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState('');
@@ -10,36 +10,33 @@ export const LoginView = ({ onLoggedIn }) => {
     event.preventDefault();
 
     const data = {
-      Username: username,
-      Password: password
+      username,
+      password
     };
 
     fetch('https://female-filmmakers.herokuapp.com/login', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
-    }).then((response) => response.json())
-      .then((data) => {
-        if (data.user) {
-          localStorage.setItem('user', JSON.stringify(data.user));
-          localStorage.setItem('token', data.token);
-          onLoggedIn(data.user, data.token);
-        } else {
-          alert('No such user!')
-        }
-      })
-      .catch((e) => {
-        alert('Something went wrong!')
-    });
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.user) {
+        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('token', data.token);
+        onLoggedIn(data.user, data.token);
+      } else {
+        alert('No such user!')
+      }
+    })
+    .catch((e) => {
+      alert('Something went wrong!')
+    })
   };
 
   return (
     <Form onSubmit={handleSubmit} className='mt-5'>
-      
       <h1 className='mb-3 header'>Login</h1>
-      
       <Form.Group className='mb-3' controlId='formUsername'>
         <Form.Label>Username:</Form.Label>
         <Form.Control
@@ -50,7 +47,6 @@ export const LoginView = ({ onLoggedIn }) => {
           minLength='4'
         />
       </Form.Group>
-      
       <Form.Group className='mb-3' controlId='formPassword'>
         <Form.Label>Password:</Form.Label>
         <Form.Control
@@ -61,7 +57,6 @@ export const LoginView = ({ onLoggedIn }) => {
           minLength='8'
         />
       </Form.Group>
-
       <Form.Group className='mb-3'>
         <Button
           variant='primary' 
@@ -69,7 +64,6 @@ export const LoginView = ({ onLoggedIn }) => {
           className='mt-2'
           >Submit</Button>
       </Form.Group>
-
     </Form>
   );
 }
