@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Col, Button, Stack } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
