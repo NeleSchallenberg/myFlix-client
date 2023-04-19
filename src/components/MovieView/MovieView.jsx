@@ -29,3 +29,16 @@ export const MovieView = ({ movies }) => {
     </Col>
   )
 }
+
+// PROP CONSTRAINTS
+MovieView.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    year: PropTypes.string,
+    length: PropTypes.string,
+    description: PropTypes.string.isRequired,
+    genre: PropTypes.string,
+    director: PropTypes.string,
+    image: PropTypes.string
+  }).isRequired)
+};

@@ -31460,6 +31460,18 @@ _s(MovieView, "e2L2DPdRH1AShA7yIOCsYRlzvlI=", false, function() {
     ];
 });
 _c = MovieView;
+// PROP CONSTRAINTS
+MovieView.propTypes = {
+    movies: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        year: PropTypes.string,
+        length: PropTypes.string,
+        description: PropTypes.string.isRequired,
+        genre: PropTypes.string,
+        director: PropTypes.string,
+        image: PropTypes.string
+    }).isRequired)
+};
 var _c;
 $RefreshReg$(_c, "MovieView");
 
