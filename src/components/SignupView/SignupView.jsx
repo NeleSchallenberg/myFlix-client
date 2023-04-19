@@ -10,11 +10,12 @@ export const SignupView = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    
     const data = {
-      username,
-      password,
-      email,
-      birthday
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: birthday
     }
 
     fetch('https://female-filmmakers.herokuapp.com/users', {
