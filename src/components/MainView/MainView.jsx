@@ -6,7 +6,7 @@ import { SignupView } from '../SignupView/SignupView';
 import { ProfileView } from '../ProfileView/ProfileView';
 import { NavigationBar } from '../NavigationBar/NavigationBar';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
