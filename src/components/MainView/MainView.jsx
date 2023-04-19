@@ -50,7 +50,7 @@ export const MainView = () => {
         }}
       />
       <Container fluid>
-        <Row className='justify-content-center mt-5 mx-4'>
+        <Row className='justify-content-center mt-4 mx-4'>
           <Routes>
             <Route
               path='/signup'
