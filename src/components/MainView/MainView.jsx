@@ -9,11 +9,11 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 export const MainView = () => {
-  const [movies, setMovies] = useState([]);
-  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
   const storedUser = localStorage.getItem('user');
   const storedToken = localStorage.getItem('token');
+  const [movies, setMovies] = useState([]);
+  const [user, setUser] = useState(storedUser ? JSON.parse(storedUser) : null);
+  const [token, setToken] = useState(storedToken ? storedToken : null);
 
   const updateUser = user => {
     setUser(user);
@@ -26,9 +26,9 @@ export const MainView = () => {
     fetch('https://female-filmmakers.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
-    .then((response) => response.json())
-    .then((movies) => {
-      const moviesFromApi = movies.map((movie) => {
+    .then(response => response.json())
+    .then(movies => {
+      const moviesFromApi = movies.map(movie => {
         return {
           id: movie._id,
           title: movie.Title,
@@ -36,7 +36,10 @@ export const MainView = () => {
           length: movie.Length,
           description: movie.Description,
           genre: movie.Genre.Name,
+          genreDescription: movie.Genre.Description,
           director: movie.Director.Name,
+          directorBio: movie.Director.Bio,
+          directorBirth: movie.Director.Birth,
           image: movie.ImagePath
         };
       });
@@ -138,13 +141,20 @@ export const MainView = () => {
             <Route
               path='/profile'
               element={
-                <>
-                  {!user ? (
-                    <Navigate to='/login' replace />
-                  ) : (
-                    <ProfileView />
-                  )}
-                </>
+                !user ? (
+                  <Navigate to='/login' replace />
+                ) : (
+                  <ProfileView
+                    user={user}
+                    token={token}
+                    movies={movies} 
+                    onLoggedOut={() => {
+                      setUser(null);
+                      setToken(null);
+                      localStorage.clear();
+                    }} updateUser={updateUser}
+                  />
+                )
               }
             />
           </Routes>
