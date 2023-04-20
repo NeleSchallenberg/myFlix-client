@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Col, Button, Form, Card, Row, } from 'react-bootstrap';
-import { MovieCard } from '../MovieCard/MovieCard';
+import { FavoriteMovies } from './FavoriteMovies';
 import { UserInfo } from './UserInfo';
 
 export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) => {
@@ -9,7 +9,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
-  let favoriteMovies = movies.filter(movie => user.FavoriteMovies.includes(movie.id))
+  let favoriteMovieList = movies.filter(movie => user.FavoriteMovies.includes(movie._id))
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -127,14 +127,8 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
       </Col>
       </Row>
       <Row>
-      <h2 className='header mt-5'>Favourite Movies</h2>
-        {favoriteMovies.map(movie => (
-          <Col key={movie.id} sm={6} md={4} lg={3} className='mb-4'>
-            <MovieCard movie={movie} />
-          </Col>
-        ))}
+        <FavoriteMovies favoriteMovieList={favoriteMovieList}/>
       </Row>
-    
     </>
   )
 }
