@@ -15,6 +15,11 @@ export const MainView = () => {
   const storedUser = localStorage.getItem('user');
   const storedToken = localStorage.getItem('token');
 
+  const updateUser = user => {
+    setUser(user);
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
   useEffect(() => {
     if (!token) return;
 
@@ -94,7 +99,12 @@ export const MainView = () => {
                   ) : movies.length === 0 ? (
                     <Col>No movies available!</Col>
                   ) : (
-                    <MovieView movies={movies} user={user} token={token} />
+                    <MovieView 
+                      movies={movies} 
+                      user={user} 
+                      token={token} 
+                      updateUser={updateUser}
+                    />
                   )}
                 </>
               }
