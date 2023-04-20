@@ -21,7 +21,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
         Birthday: birthday,
     }
 
-    fetch(`https://female-filmmakers.herokuapp.com/users/${user.Username}`, {
+    fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}`, {
       method: 'PUT',
       body: JSON.stringify(data),
       headers: {
@@ -76,7 +76,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
             </Card.Title>
               <p>Username: {user.username}</p>
               <p>Email: {user.email}</p>
-              <p>Birthday: {user.brithday} </p>
+              <p>Birthday: {user.birthday} </p>
           </Card.Body>
         </Card>
 

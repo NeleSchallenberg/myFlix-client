@@ -7,21 +7,22 @@ import { useState, useEffect } from 'react';
 
 export const MovieView = ({ movies, user, token, updateUser }) => {
   const { movieId } = useParams();
-  const movie = movies.find(m => m.id === movieId);
+  const movie = movies.find(movie => movie.id === movieId);
   const similarMovies = movies.filter(movie => movie.genre === movie.genre ? true : false);
-  const [favorite, setFavorite] = useState(user.favoriteMovies.includes(movie.id));
+  const [favorite, setFavorite] = useState(user.FavoriteMovies.includes(movie.id));
 
   useEffect(() => {
-    setFavorite(user.favoriteMovies.includes(movie.id));
+    setFavorite(user.FavoriteMovies.includes(movie.id));
   }, [movieId])
 
   const addFavorite = () => {
-    fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}/movies/${movieId}`, {
+    fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}/movies/${movieId}}`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(response => {
       if (response.ok) {
+        console.log('responding')
         return response.json();
       } else {
         alert('Movie could not be added.')
@@ -30,9 +31,11 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     })
     .then (user => {
       if (user) {
+        console.log('was added')
         alert('Movie was added to Favorites!');
         setFavorite(true);
         updateUser(user);
+
       }
     })
     .catch(e => {
@@ -47,6 +50,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     })
     .then(response => {
       if (response.ok) {
+        console.log('responding')
         return response.json();
       } else {
         alert('Movie could not be deleted.');
@@ -81,13 +85,15 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
             <span>Directed by </span>
             <span style={{fontWeight: 'bold'}}>{movie.director}</span>
           </div>
-          <Link to={`/`}>
-            <Button variant='primary' className='mb-5'>Back</Button>
-          </Link>
-          {favorite ?
-            <Button variant='secondary' onClick={removeFavorite}>Remove from Favorites</Button>
-            : <Button variant='secondary' onClick={addFavorite}>Add to Favorites</Button>
-          }
+          <div className=''>
+            <Link to={`/`}>
+              <Button variant='primary' className='mb-5'>Back</Button>
+            </Link>
+              {favorite ?
+                <Button className='mb-5 ml-3' variant='primary' onClick={removeFavorite}>Remove from Favorites</Button>
+                : <Button className='mb-5 ml-3' variant='primary' onClick={addFavorite}>Add to Favorites</Button>
+              }
+          </div>
         </Col>
       </Row>
       <Row>
@@ -106,7 +112,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
 MovieView.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired,
+    year: PropTypes.string,
     length: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
