@@ -97,7 +97,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
         </Col>
       </Row>
       <Row>
-        <h2 className='header mb-3'>Similar Movies</h2>
+        <h2 className='header'>Similar Movies</h2>
         {similarMovies.map(movie => (
           <Col key={movie.id} sm={6} md={4} lg={3} className='mb-4'>
             <MovieCard movie={movie} />

@@ -69,10 +69,10 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
   return (
     <>
       <Row>
-        <Col>
-        <h2 className='header mt-4 mb-4'>Update Information</h2>
-        <Form className='mt-3' onSubmit={handleSubmit}>
-          <Form.Group className='mb-3' controlId='formUsername'>
+        <Col  md={5}>
+        <h2 className='header mt-5 mb-4'>Update Information</h2>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className='mb-4' controlId='formUsername'>
             <Form.Control 
               type='text'
               value={username}
@@ -82,7 +82,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='formPassword'>
+          <Form.Group className='mb-4' controlId='formPassword'>
             <Form.Control 
               type='password'
               value={password}
@@ -91,7 +91,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='formEmail'>
+          <Form.Group className='mb-4' controlId='formEmail'>
             <Form.Control
               type='email'
               value={email}
@@ -100,7 +100,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
               required
             />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='formBirthday'>
+          <Form.Group className='mb-4' controlId='formBirthday'>
             <Form.Control
               type='date'
               value={birthday}
@@ -110,7 +110,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
             />
           </Form.Group>
             <Button 
-              className='mt-1 mb-3'
+              className='mb-4'
               variant='secondary' 
               type='submit'
             >Update
@@ -118,19 +118,16 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
         </Form>
         </Col>
 
-        <Col sm={1} >
-        </Col>
-
-      <Col sm={5}>
-      <h2 className='header mt-4'>Your Account</h2>
-        <Card className='mt-4 mb-4'>
+      <Col  md={{span:5, offset:2}}>
+      <h2 className='header mt-5 mb-4'>Your Account</h2>
+        <Card className='mb-5'>
           <Card.Body>
               <p>Username: {user.Username}</p>
               <p>Email: {user.Email}</p>
               <p>Birthday: {user.Birthday.slice(0, 10)} </p>
           </Card.Body>
         </Card>
-        <Link to='' className='mt-5' onClick={() => {
+        <Link to='' onClick={() => {
             if (confirm('Delete account permanentely?')) {
               deleteAccount();
             }

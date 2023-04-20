@@ -42947,7 +42947,7 @@ const MovieView = ({ movies , user , token , updateUser  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "header mb-3",
+                        className: "header",
                         children: "Similar Movies"
                     }, void 0, false, {
                         fileName: "src/components/MovieView/MovieView.jsx",
@@ -43548,9 +43548,10 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        md: 5,
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                className: "header mt-4 mb-4",
+                                className: "header mt-5 mb-4",
                                 children: "Update Information"
                             }, void 0, false, {
                                 fileName: "src/components/ProfileView/ProfileView.jsx",
@@ -43558,11 +43559,10 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                 columnNumber: 9
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
-                                className: "mt-3",
                                 onSubmit: handleSubmit,
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                                        className: "mb-3",
+                                        className: "mb-4",
                                         controlId: "formUsername",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                             type: "text",
@@ -43582,7 +43582,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                         columnNumber: 11
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                                        className: "mb-3",
+                                        className: "mb-4",
                                         controlId: "formPassword",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                             type: "password",
@@ -43601,7 +43601,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                         columnNumber: 11
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                                        className: "mb-3",
+                                        className: "mb-4",
                                         controlId: "formEmail",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                             type: "email",
@@ -43620,7 +43620,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                         columnNumber: 11
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
-                                        className: "mb-3",
+                                        className: "mb-4",
                                         controlId: "formBirthday",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                             type: "date",
@@ -43639,7 +43639,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                         columnNumber: 11
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                        className: "mt-1 mb-3",
+                                        className: "mb-4",
                                         variant: "secondary",
                                         type: "submit",
                                         children: "Update"
@@ -43661,25 +43661,21 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                        sm: 1
-                    }, void 0, false, {
-                        fileName: "src/components/ProfileView/ProfileView.jsx",
-                        lineNumber: 121,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                        sm: 5,
+                        md: {
+                            span: 5,
+                            offset: 2
+                        },
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                className: "header mt-4",
+                                className: "header mt-5 mb-4",
                                 children: "Your Account"
                             }, void 0, false, {
                                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                                lineNumber: 125,
+                                lineNumber: 122,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-                                className: "mt-4 mb-4",
+                                className: "mb-5",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -43689,7 +43685,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/ProfileView/ProfileView.jsx",
-                                            lineNumber: 128,
+                                            lineNumber: 125,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -43699,7 +43695,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/ProfileView/ProfileView.jsx",
-                                            lineNumber: 129,
+                                            lineNumber: 126,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -43710,36 +43706,35 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/ProfileView/ProfileView.jsx",
-                                            lineNumber: 130,
+                                            lineNumber: 127,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/ProfileView/ProfileView.jsx",
-                                    lineNumber: 127,
+                                    lineNumber: 124,
                                     columnNumber: 11
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                                lineNumber: 126,
+                                lineNumber: 123,
                                 columnNumber: 9
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "",
-                                className: "mt-5",
                                 onClick: ()=>{
                                     if (confirm("Delete account permanentely?")) deleteAccount();
                                 },
                                 children: "Permanentely delete profile"
                             }, void 0, false, {
                                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                                lineNumber: 133,
+                                lineNumber: 130,
                                 columnNumber: 9
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ProfileView/ProfileView.jsx",
-                        lineNumber: 124,
+                        lineNumber: 121,
                         columnNumber: 7
                     }, undefined)
                 ]
@@ -43755,7 +43750,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                         children: "Favourite Movies"
                     }, void 0, false, {
                         fileName: "src/components/ProfileView/ProfileView.jsx",
-                        lineNumber: 141,
+                        lineNumber: 138,
                         columnNumber: 7
                     }, undefined),
                     favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -43767,18 +43762,18 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                 movie: movie
                             }, void 0, false, {
                                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                                lineNumber: 144,
+                                lineNumber: 141,
                                 columnNumber: 13
                             }, undefined)
                         }, movie.id, false, {
                             fileName: "src/components/ProfileView/ProfileView.jsx",
-                            lineNumber: 143,
+                            lineNumber: 140,
                             columnNumber: 11
                         }, undefined))
                 ]
             }, void 0, true, {
                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                lineNumber: 140,
+                lineNumber: 137,
                 columnNumber: 7
             }, undefined)
         ]
