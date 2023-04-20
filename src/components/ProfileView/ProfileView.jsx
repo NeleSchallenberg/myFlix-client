@@ -3,7 +3,7 @@ import { Col, Button, Form, Card, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { MovieCard } from '../MovieCard/MovieCard';
 
-export const ProfileView = ({ user, token, movie, movies, onLoggedOut, updateUser }) => {
+export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -15,13 +15,13 @@ export const ProfileView = ({ user, token, movie, movies, onLoggedOut, updateUse
     event.preventDefault();
 
     const data = {
-      Username: username,
-      Password: password,
-      Email: email,
-      Birthday: birthday
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday,
     }
 
-    fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}`, {
+    fetch(`https://female-filmmakers.herokuapp.com/users/${user.Username}`, {
       method: 'PUT',
       body: JSON.stringify(data),
       headers: {
@@ -29,7 +29,7 @@ export const ProfileView = ({ user, token, movie, movies, onLoggedOut, updateUse
         'Content-Type': 'application/json'
       }
     })
-    .then((response) => {
+    .then(response => {
       if (response.ok) {
         return response.json();
       } else {
@@ -37,7 +37,7 @@ export const ProfileView = ({ user, token, movie, movies, onLoggedOut, updateUse
         return false;
       }
     })
-    .then((user) => {
+    .then(user => {
       if (user) {
         alert('Information was successfully updated!')
         updateUser(user);
@@ -137,7 +137,6 @@ export const ProfileView = ({ user, token, movie, movies, onLoggedOut, updateUse
       </Col>
 
       <Col
-        key={movie.id} 
         sm={6} 
         md={4} 
         lg={3} 
