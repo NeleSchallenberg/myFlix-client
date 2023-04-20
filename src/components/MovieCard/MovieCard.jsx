@@ -1,16 +1,26 @@
 // Import prop-types library
 import PropTypes from "prop-types";
+// Import react-bootstrap components
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 // Exposing MovieCard component
 export const MovieCard = ({movie, onMovieClick}) => {
   // Creating MovieCard component
   return (
-    <div
+    <Card
+      className='h-100'
       onClick={() => {
         onMovieClick(movie)
-      }}>
-        {movie.title}
-    </div>
+      }}
+    >
+      <Card.Img variant='top' src={movie.image} />
+      <Card.Body>
+        <Card.Title>{movie.title}</Card.Title>
+        <Card.Subtitle>{movie.director}</Card.Subtitle>
+        <Card.Text>{movie.genre}</Card.Text>
+      </Card.Body>
+    </Card>
   )
 }
 

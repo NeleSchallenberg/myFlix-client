@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 // Expose SignupView component
 export const SignupView = () => {
@@ -38,45 +40,59 @@ export const SignupView = () => {
 
   // Creating SignupView component with event handler
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input 
+    <Form onSubmit={handleSubmit} className='mt-5'>
+
+      <h1 className='mb-3'>Sign Up</h1>
+
+      <Form.Group className='mb-3' controlId='formUsername'>
+        <Form.Label>Username:</Form.Label>
+        <Form.Control 
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
           minLength='4'
         />
-      </label>
-      <label>
-        Password:
-        <input 
+      </Form.Group>
+
+      <Form.Group className='mb-3' controlId='formPassword'>
+        <Form.Label>Password:</Form.Label>
+        <Form.Control 
           type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Email:
-        <input 
+      </Form.Group>
+
+      <Form.Group className='mb-3' controlId='formEmail'>
+        <Form.Label>Email:</Form.Label>
+        <Form.Control
           type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Birthday:
-        <input 
+      </Form.Group>
+
+      <Form.Group className='mb-3' controlId='formBirthday'>
+        <Form.Label>Birthday:</Form.Label>
+        <Form.Control
           type='date'
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
           required
         />
-      </label>
-      <button type='submit'>Sign up</button>
-    </form>
+      </Form.Group>
+
+      <Form.Group className='mb-3'>
+        <Button 
+          className='mt-2'
+          variant='primary' 
+          type='submit'
+        >Submit</Button>
+      </Form.Group>
+
+    </Form>
   )
 }
