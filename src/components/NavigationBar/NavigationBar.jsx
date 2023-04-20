@@ -2,16 +2,14 @@ import { Navbar, Container, Nav, NavbarBrand } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
+
   return (
     <Navbar expand='lg'>
       <Container fluid>
-
         <Navbar.Brand as={Link} to='/'>
           <h1 className='header'>female filmmakers</h1>
         </Navbar.Brand>
-
         <Navbar.Toggle aria-controls='basic-navbar-nav'/>
-
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>
           {!user && (
@@ -37,7 +35,6 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
             )}
           </Nav>
         </Navbar.Collapse>
-        
       </Container>
     </Navbar>
   )
