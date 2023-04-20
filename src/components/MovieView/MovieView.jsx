@@ -85,7 +85,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
             <span>Directed by </span>
             <span style={{fontWeight: 'bold'}}>{movie.director}</span>
           </div>
-          <div className=''>
+          <Stack direction='horizontal' gap={3}>
             <Link to={`/`}>
               <Button variant='primary' className='mb-5'>Back</Button>
             </Link>
@@ -93,11 +93,11 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
                 <Button className='mb-5 ml-3' variant='primary' onClick={removeFavorite}>Remove from Favorites</Button>
                 : <Button className='mb-5 ml-3' variant='primary' onClick={addFavorite}>Add to Favorites</Button>
               }
-          </div>
+          </Stack>
         </Col>
       </Row>
       <Row>
-        <h2 className='header'>Similar Movies</h2>
+        <h2 className='header mb-3'>Similar Movies</h2>
         {similarMovies.map(movie => (
           <Col key={movie.id} sm={6} md={4} lg={3} className='mb-4'>
             <MovieCard movie={movie} />

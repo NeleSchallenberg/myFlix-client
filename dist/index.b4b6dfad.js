@@ -42888,8 +42888,9 @@ const MovieView = ({ movies , user , token , updateUser  })=>{
                             lineNumber: 84,
                             columnNumber: 11
                         }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Stack), {
+                            direction: "horizontal",
+                            gap: 3,
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                     to: `/`,
@@ -42946,7 +42947,7 @@ const MovieView = ({ movies , user , token , updateUser  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "header",
+                        className: "header mb-3",
                         children: "Similar Movies"
                     }, void 0, false, {
                         fileName: "src/components/MovieView/MovieView.jsx",
