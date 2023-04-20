@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Col, Button, Form, Card, Row, } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { MovieCard } from '../MovieCard/MovieCard';
+import { UserInfo } from './UserInfo';
 
 export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) => {
   const [username, setUsername] = useState('');
@@ -119,19 +119,11 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
         </Col>
 
       <Col  md={{span:5, offset:2}}>
-      <h2 className='header mt-5 mb-4'>Your Account</h2>
-        <Card className='mb-5'>
-          <Card.Body>
-              <p>Username: {user.Username}</p>
-              <p>Email: {user.Email}</p>
-              <p>Birthday: {user.Birthday.slice(0, 10)} </p>
-          </Card.Body>
-        </Card>
-        <Link to='' onClick={() => {
-            if (confirm('Delete account permanentely?')) {
-              deleteAccount();
-            }
-          }}>Permanentely delete profile</Link>
+        <UserInfo 
+          username={user.Username}
+          email={user.Email}
+          birthday={user.Birthday}
+        />
       </Col>
       </Row>
       <Row>

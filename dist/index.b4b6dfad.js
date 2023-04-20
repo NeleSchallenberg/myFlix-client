@@ -43488,8 +43488,8 @@ parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
-var _reactRouterDom = require("react-router-dom");
 var _movieCard = require("../MovieCard/MovieCard");
+var _userInfo = require("./UserInfo");
 var _s = $RefreshSig$();
 const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
     _s();
@@ -43665,74 +43665,16 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                             span: 5,
                             offset: 2
                         },
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                className: "header mt-5 mb-4",
-                                children: "Your Account"
-                            }, void 0, false, {
-                                fileName: "src/components/ProfileView/ProfileView.jsx",
-                                lineNumber: 122,
-                                columnNumber: 7
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-                                className: "mb-5",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                            children: [
-                                                "Username: ",
-                                                user.Username
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/ProfileView/ProfileView.jsx",
-                                            lineNumber: 125,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                            children: [
-                                                "Email: ",
-                                                user.Email
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/ProfileView/ProfileView.jsx",
-                                            lineNumber: 126,
-                                            columnNumber: 15
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                            children: [
-                                                "Birthday: ",
-                                                user.Birthday.slice(0, 10),
-                                                " "
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/ProfileView/ProfileView.jsx",
-                                            lineNumber: 127,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/ProfileView/ProfileView.jsx",
-                                    lineNumber: 124,
-                                    columnNumber: 11
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/ProfileView/ProfileView.jsx",
-                                lineNumber: 123,
-                                columnNumber: 9
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "",
-                                onClick: ()=>{
-                                    if (confirm("Delete account permanentely?")) deleteAccount();
-                                },
-                                children: "Permanentely delete profile"
-                            }, void 0, false, {
-                                fileName: "src/components/ProfileView/ProfileView.jsx",
-                                lineNumber: 130,
-                                columnNumber: 9
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userInfo.UserInfo), {
+                            username: user.Username,
+                            email: user.Email,
+                            birthday: user.Birthday
+                        }, void 0, false, {
+                            fileName: "src/components/ProfileView/ProfileView.jsx",
+                            lineNumber: 122,
+                            columnNumber: 9
+                        }, undefined)
+                    }, void 0, false, {
                         fileName: "src/components/ProfileView/ProfileView.jsx",
                         lineNumber: 121,
                         columnNumber: 7
@@ -43750,7 +43692,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                         children: "Favourite Movies"
                     }, void 0, false, {
                         fileName: "src/components/ProfileView/ProfileView.jsx",
-                        lineNumber: 138,
+                        lineNumber: 130,
                         columnNumber: 7
                     }, undefined),
                     favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -43762,18 +43704,18 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                                 movie: movie
                             }, void 0, false, {
                                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                                lineNumber: 141,
+                                lineNumber: 133,
                                 columnNumber: 13
                             }, undefined)
                         }, movie.id, false, {
                             fileName: "src/components/ProfileView/ProfileView.jsx",
-                            lineNumber: 140,
+                            lineNumber: 132,
                             columnNumber: 11
                         }, undefined))
                 ]
             }, void 0, true, {
                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                lineNumber: 137,
+                lineNumber: 129,
                 columnNumber: 7
             }, undefined)
         ]
@@ -43789,6 +43731,99 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","react-bootstrap":"3AD9A","react":"21dqq","react/jsx-dev-runtime":"iTorj","react-router-dom":"fdOAw","../MovieCard/MovieCard":"99v78"}]},["cC5yv","4VzsO","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","react-bootstrap":"3AD9A","react":"21dqq","react/jsx-dev-runtime":"iTorj","../MovieCard/MovieCard":"99v78","./UserInfo":"enUww"}],"enUww":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$65f5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$65f5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "UserInfo", ()=>UserInfo);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+const UserInfo = ({ username , email , birthday  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "header mt-5 mb-4",
+                children: "Your Account"
+            }, void 0, false, {
+                fileName: "src/components/ProfileView/UserInfo.jsx",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+                className: "mb-5",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: [
+                                "Username: ",
+                                username
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/ProfileView/UserInfo.jsx",
+                            lineNumber: 10,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: [
+                                "Email: ",
+                                email
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/ProfileView/UserInfo.jsx",
+                            lineNumber: 11,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: [
+                                "Birthday: ",
+                                birthday.slice(0, 10),
+                                " "
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/ProfileView/UserInfo.jsx",
+                            lineNumber: 12,
+                            columnNumber: 13
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/ProfileView/UserInfo.jsx",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/ProfileView/UserInfo.jsx",
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: "",
+                onClick: ()=>{
+                    if (confirm("Delete account permanentely?")) deleteAccount();
+                },
+                children: "Permanentely delete profile"
+            }, void 0, false, {
+                fileName: "src/components/ProfileView/UserInfo.jsx",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_c = UserInfo;
+var _c;
+$RefreshReg$(_c, "UserInfo");
+
+  $parcel$ReactRefreshHelpers$65f5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","react-router-dom":"fdOAw"}]},["cC5yv","4VzsO","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
