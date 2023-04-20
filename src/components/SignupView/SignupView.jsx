@@ -7,9 +7,8 @@ export const SignupView = () => {
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
-
     
     const data = {
       Username: username,
@@ -23,7 +22,7 @@ export const SignupView = () => {
       body: JSON.stringify(data),
       headers: { 'Content-Type': 'application/json' }
     })
-    .then((response) => {
+    .then(response => {
       if (response.ok) {
         alert('Signup successful!');
         window.location.replace('/login');
@@ -41,7 +40,7 @@ export const SignupView = () => {
         <Form.Control 
           type='text'
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={e => setUsername(e.target.value)}
           required
           minLength='4'
         />
@@ -51,7 +50,7 @@ export const SignupView = () => {
         <Form.Control 
           type='password'
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={e => setPassword(e.target.value)}
           required
         />
       </Form.Group>
@@ -60,7 +59,7 @@ export const SignupView = () => {
         <Form.Control
           type='email'
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
           required
         />
       </Form.Group>
@@ -69,7 +68,7 @@ export const SignupView = () => {
         <Form.Control
           type='date'
           value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
+          onChange={e => setBirthday(e.target.value)}
           required
         />
       </Form.Group>
