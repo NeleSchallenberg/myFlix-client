@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Col, Button, Form, Card, } from 'react-bootstrap';
+import { Col, Button, Form, Card, Row, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { MovieCard } from '../MovieCard/MovieCard';
 
@@ -21,7 +21,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
         Birthday: birthday,
     }
 
-    fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}`, {
+    fetch(`https://female-filmmakers.herokuapp.com/users/${user.Username}`, {
       method: 'PUT',
       body: JSON.stringify(data),
       headers: {
@@ -49,7 +49,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
   }
 
   const deleteAccount = () => {
-    fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}`, {
+    fetch(`https://female-filmmakers.herokuapp.com/users/${user.Username}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -68,25 +68,15 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
 
   return (
     <>
-      <Col sm={4}>
-        <Card>
-          <Card.Body>
-            <Card.Title>
-              <h2 className='header mb-3'>Your Account</h2>
-            </Card.Title>
-              <p>Username: {user.username}</p>
-              <p>Email: {user.email}</p>
-              <p>Birthday: {user.birthday} </p>
-          </Card.Body>
-        </Card>
-
-        <h2 className='header mt-5'>Update Information</h2>
+      <Row>
+        <Col>
+        <h2 className='header mt-4 mb-4'>Update Information</h2>
         <Form className='mt-3' onSubmit={handleSubmit}>
           <Form.Group className='mb-3' controlId='formUsername'>
             <Form.Control 
               type='text'
               value={username}
-              placeholder={user.username}
+              placeholder='Username'
               onChange={e => setUsername(e.target.value)}
               minLength='4'
               required
@@ -96,7 +86,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
             <Form.Control 
               type='password'
               value={password}
-              placeholder={user.password}
+              placeholder='Password'
               onChange={e => setPassword(e.target.value)}
               required
             />
@@ -105,7 +95,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
             <Form.Control
               type='email'
               value={email}
-              placeholder={user.email}
+              placeholder='Email'
               onChange={e => setEmail(e.target.value)}
               required
             />
@@ -114,7 +104,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
             <Form.Control
               type='date'
               value={birthday}
-              placeholder={user.birthday}
+              placeholder='Birthday'
               onChange={e => setBirthday(e.target.value)}
               required
             />
@@ -126,27 +116,36 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
             >Update
             </Button>
         </Form>
-          <Link to='' className='mt-5' onClick={() => {
-            if (confirm('Delete profile permanentely?')) {
+        </Col>
+
+        <Col sm={1} >
+        </Col>
+
+      <Col sm={5}>
+      <h2 className='header mt-4'>Your Account</h2>
+        <Card className='mt-4 mb-4'>
+          <Card.Body>
+              <p>Username: {user.Username}</p>
+              <p>Email: {user.Email}</p>
+              <p>Birthday: {user.Birthday.slice(0, 10)} </p>
+          </Card.Body>
+        </Card>
+        <Link to='' className='mt-5' onClick={() => {
+            if (confirm('Delete account permanentely?')) {
               deleteAccount();
             }
           }}>Permanentely delete profile</Link>
       </Col>
-
-      <Col sm={1}>
-      </Col>
-
-      <Col
-        sm={6} 
-        md={4} 
-        lg={3} 
-        className='mb-4'
-      >
-        <h2 className='mt-2 header'>Favourites</h2>
+      </Row>
+      <Row>
+      <h2 className='header mt-5'>Favourite Movies</h2>
         {favoriteMovies.map(movie => (
-          <MovieCard movie={movie} />
+          <Col key={movie.id} sm={6} md={4} lg={3} className='mb-4'>
+            <MovieCard movie={movie} />
+          </Col>
         ))}
-      </Col>
+      </Row>
+    
     </>
   )
 }
