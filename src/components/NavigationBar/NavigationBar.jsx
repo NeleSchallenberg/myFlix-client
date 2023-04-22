@@ -1,12 +1,17 @@
 import { Navbar, Container, Nav, NavbarBrand } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export const NavigationBar = ({ user, onLoggedOut }) => {
+export const NavigationBar = ({ user, onLoggedOut, onSearch}) => {
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    onSearch(query)
+  }, [query]);
 
   return (
     <Navbar expand='lg'>
       <Container fluid>
-        <Navbar.Brand as={Link} to='/'>
+        <Navbar.Brand as={Link} to='/' onClick={() => setQuery('')}>
           <h1 className='header'>female filmmakers</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav'/>
@@ -24,10 +29,10 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
             )}
             {user && (
               <>
-                <Nav.Link as={Link} to='/'>
+                <Nav.Link as={Link} to='/' onClick={() => setQuery('')}>
                   Home
                 </Nav.Link>
-                <Nav.Link as={Link} to='/profile'>
+                <Nav.Link as={Link} to='/profile' onClick={() => setQuery('')}>
                   Profile
                 </Nav.Link>
                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
