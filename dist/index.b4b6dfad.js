@@ -42743,7 +42743,7 @@ const MovieView = ({ movies , user , token , updateUser  })=>{
         movieId
     ]);
     const addFavorite = ()=>{
-        fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}/movies/${movieId}}`, {
+        fetch(`https://female-filmmakers.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -42768,7 +42768,7 @@ const MovieView = ({ movies , user , token , updateUser  })=>{
         });
     };
     const removeFavorite = ()=>{
-        fetch(`https://female-filmmakers.herokuapp.com/users/${user.username}/movies/${movieId}`, {
+        fetch(`https://female-filmmakers.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
