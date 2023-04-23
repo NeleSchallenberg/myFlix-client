@@ -8,11 +8,15 @@ import { useState, useEffect } from 'react';
 export const MovieView = ({ movies, user, token, updateUser }) => {
   const { movieId } = useParams();
   const movie = movies.find(movie => movie.id === movieId);
-  const similarMovies = movies.filter(movie => movie.genre === movie.genre ? true : false);
-  const [favorite, setFavorite] = useState(user.FavoriteMovies.includes(movie.id));
+  console.log(movies);
+  const similarMovies = movies.filter(movie => movie.genre === 'Drama' ? true : false);
+  // Old code, second move.genre is wrong:
+  // const similarMovies = movies.filter(movie => movie.genre === movie.genre ? true : false);
+  console.log(similarMovies);
+  const [favorite, setFavorite] = useState(user.FavoriteMovies.includes(movieId));
 
   useEffect(() => {
-    setFavorite(user.FavoriteMovies.includes(movie.id));
+    setFavorite(user.FavoriteMovies.includes(movieId));
   }, [movieId])
 
   const addFavorite = () => {
