@@ -13,6 +13,8 @@ Users are able to
 - update their personal information
 - delete their profile
 
+<br>
+
 ![Female Filmmakers web view](https://github.com/NeleSchallenberg/myFlix-client/blob/dev/src/img/Screenshot.png)
 
 ### Features that will be implemented/fixed:
