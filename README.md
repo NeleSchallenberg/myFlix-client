@@ -46,5 +46,5 @@ tba
 
 https://github.com/NeleSchallenberg/movie-api
 
-Documentation about the API can be found here:
+Documentation about the API can be found here:<br>
 https://female-filmmakers.herokuapp.com/documentation.html
