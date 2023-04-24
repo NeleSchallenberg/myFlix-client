@@ -13,11 +13,7 @@ Users are able to
 - update their personal information
 - delete their profile
 
-<br>
-
 ![Female Filmmakers web view](https://github.com/NeleSchallenberg/myFlix-client/blob/dev/src/img/Screenshot.png)
-
-<br>
 
 ### Features that will be implemented/fixed:
 
@@ -49,3 +45,6 @@ tba
 ### API:
 
 https://github.com/NeleSchallenberg/movie-api
+
+Documentation about the API can be found here:
+https://female-filmmakers.herokuapp.com/documentation.html
