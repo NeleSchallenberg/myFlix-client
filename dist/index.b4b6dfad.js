@@ -2965,7 +2965,7 @@ $RefreshReg$(_c, "MyFlixApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","./components/MainView/MainView":"8CR3S","react-bootstrap/Container":"hEdsw","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","./img/placeholder.png":"4gjLP","./index.scss":"lJZlQ"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","./components/MainView/MainView":"8CR3S","react-bootstrap/Container":"hEdsw","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","./index.scss":"lJZlQ","./img/placeholder.png":"4gjLP"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("8289cb876f714f8c");
 
@@ -27505,7 +27505,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../MovieCard/MovieCard":"99v78","../MovieView/MovieView":"208CJ","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","../LoginView/LoginView":"7GV9H","../SignupView/SignupView":"fo9ag","react-router-dom":"fdOAw","../ProfileView/ProfileView":"Ptnxa","../NavigationBar/NavigationBar":"eM83Z","./SearchBar":"4A6UO","react-bootstrap":"3AD9A"}],"99v78":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../MovieCard/MovieCard":"99v78","../MovieView/MovieView":"208CJ","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","../LoginView/LoginView":"7GV9H","../SignupView/SignupView":"fo9ag","../ProfileView/ProfileView":"Ptnxa","../NavigationBar/NavigationBar":"eM83Z","react-router-dom":"fdOAw","react-bootstrap":"3AD9A","./SearchBar":"4A6UO"}],"99v78":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$854b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43494,7 +43494,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","./FavoriteMovies":"ky52s","./UserInfo":"enUww","./UpdateUser":"kpESR","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf"}],"ky52s":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","./FavoriteMovies":"ky52s","./UserInfo":"enUww","./UpdateUser":"kpESR","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","react":"21dqq"}],"ky52s":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f1cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43958,7 +43958,7 @@ $RefreshReg$(_c, "SearchBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf"}],"4gjLP":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf"}],"lJZlQ":[function() {},{}],"4gjLP":[function(require,module,exports) {
 module.exports = require("f53008b61e44cc8f").getBundleURL("byUka") + "placeholder.fed0b2a8.png" + "?" + Date.now();
 
 },{"f53008b61e44cc8f":"dP0sC"}],"dP0sC":[function(require,module,exports) {
@@ -43995,6 +43995,6 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"lJZlQ":[function() {},{}]},["cC5yv","4VzsO","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{}]},["cC5yv","4VzsO","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
