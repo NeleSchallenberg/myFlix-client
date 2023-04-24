@@ -17,6 +17,8 @@ Users are able to
 
 ![Female Filmmakers web view](https://github.com/NeleSchallenberg/myFlix-client/blob/dev/src/img/Screenshot.png)
 
+<br>
+
 ### Features that will be implemented/fixed:
 
 - Search bar functionality
