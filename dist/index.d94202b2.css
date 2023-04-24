@@ -1,5 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap";
-.header {
+
+
+h1, .h1 {
   font-family: DM Serif Display;
 }
 
@@ -12011,4 +12013,4 @@ textarea.form-control-lg {
   }
 }
 
-/*# sourceMappingURL=index.ce1d6491.css.map */
+/*# sourceMappingURL=index.d94202b2.css.map */
