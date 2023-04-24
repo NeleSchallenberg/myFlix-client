@@ -87,6 +87,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
       </Row>
       <Row>
         <FavoriteMovies favoriteMovieList={favoriteMovieList}/>
+        <h5 className='mt-3 mb-5'>Under construction...</h5>
       </Row>
     </>
   )

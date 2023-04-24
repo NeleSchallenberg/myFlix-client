@@ -98,11 +98,12 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
       </Row>
       <Row>
         <h2 className='header'>Similar Movies</h2>
-        {similarMovies.map(movie => (
+        <h5 className='mt-3 mb-5'>Under construction...</h5>
+        {/* {similarMovies.map(movie => (
           <Col key={movie.id} sm={6} md={4} lg={3} className='mb-4'>
             <MovieCard movie={movie} />
           </Col>
-        ))}
+        ))} */}
       </Row>
     </>
   )

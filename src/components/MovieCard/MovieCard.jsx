@@ -7,7 +7,7 @@ export const MovieCard = ({ movie }) => {
     <Card className='h-100'>
       <Card.Img variant='top' src={movie.image} />
       <Card.Body>
-        <Card.Title>
+        <Card.Title className='header'>
           <h4>{movie.title}</h4>
         </Card.Title>
         <Card.Subtitle>
