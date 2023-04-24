@@ -113,7 +113,7 @@ export const MainView = () => {
                 {!user ? (
                   <Navigate to='/login' replace />
                 ) : movies.length === 0 ? (
-                  <Col>No movies available!</Col>
+                  <Col>Loading...</Col>
                 ) : (
                   <MovieView 
                     movies={movies} 
@@ -132,7 +132,7 @@ export const MainView = () => {
                 {!user ? (
                   <Navigate to='/login' replace />
                 ) : movies.length === 0 ? (
-                  <Col>No movies available!</Col>
+                  <Col>Loading...</Col>
                 ) : (
                   <>
                     <SearchBar />
