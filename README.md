@@ -1,7 +1,7 @@
 # Female Filmmakers Database
 
 This project is a web application/database about women in the film industry.
-It was built built as a task for Achievement 3 in [CareerFoundry's Full-Stack Web Development program](https://careerfoundry.com/en/courses/become-a-web-developer) and uses the RESTful [Movie API](https://github.com/NeleSchallenberg/movie-api) from Achievement 2.
+It was built as a task for Achievement 3 in [CareerFoundry's Full-Stack Web Development program](https://careerfoundry.com/en/courses/become-a-web-developer) and uses the RESTful [Movie API](https://github.com/NeleSchallenberg/movie-api) from Achievement 2.
 
 ## About
 
@@ -13,6 +13,8 @@ Users are able to
 - update their personal information
 - delete their profile
 
+![Female Filmmakers web view](https://github.com/NeleSchallenberg/myFlix-client/blob/dev/src/img/Screenshot.png)
+
 ### Features that will be implemented/fixed:
 
 - Search bar functionality
@@ -20,9 +22,7 @@ Users are able to
 - Displaying similar movies in movie view
 - List of directors
 
-In the future, the database will be updated with women in other off-screen professions such as writers, cinematographers and production designers and include a function to find a specific person by name and receive general information about them, as well as a list of their work.
-
-![Female Filmmakers web view](https://github.com/NeleSchallenberg/myFlix-client/blob/dev/src/img/Screenshot.png)
+In the future, the database will be updated with information about women in other off-screen professions such as writers, cinematographers and production designers and include a function to find a specific person by name and receive general information about them, as well as a list of their work.
 
 ## Built with:
 
