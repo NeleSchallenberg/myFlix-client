@@ -1,6 +1,6 @@
 # Female Filmmakers Database
 
-This project is a web application/database about women in the film industry.
+This project is a web application/database about women in the film industry.<br>
 It was built as a task for Achievement 3 in [CareerFoundry's Full-Stack Web Development program](https://careerfoundry.com/en/courses/become-a-web-developer) and uses the RESTful [Movie API](https://github.com/NeleSchallenberg/movie-api) from Achievement 2.
 
 ## About
