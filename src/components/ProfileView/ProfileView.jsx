@@ -77,7 +77,7 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
           />
         </Col>
 
-      <Col  md={{span:5, offset:2}}>
+      <Col  md={{span:5, offset:1}}>
         <UserInfo 
           username={user.Username}
           email={user.Email}

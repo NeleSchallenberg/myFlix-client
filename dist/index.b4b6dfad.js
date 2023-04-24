@@ -43575,7 +43575,7 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                         md: {
                             span: 5,
-                            offset: 2
+                            offset: 1
                         },
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userInfo.UserInfo), {
                             username: user.Username,
