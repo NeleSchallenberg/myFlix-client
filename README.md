@@ -5,7 +5,7 @@ It was built as a task for Achievement 3 in [CareerFoundry's Full-Stack Web Deve
 
 ## About
 
-For now, the web application provides users with access to information about different feature-length movies (with a minimum of 80 minutes as defined by the Screen Actors Guild) by several female directors.
+For now, the web application provides users with access to information about different feature-length movies (with a minimum of 80 minutes as defined by the Screen Actors Guild) by several female directors.<br>
 Users are able to
 
 - sign up
@@ -23,6 +23,8 @@ Users are able to
 - List of directors
 
 In the future, the database will be updated with information about women in other off-screen professions such as writers, cinematographers and production designers and include a function to find a specific person by name and receive general information about them, as well as a list of their work.
+
+---
 
 ## Built with:
 
