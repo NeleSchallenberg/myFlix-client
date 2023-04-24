@@ -24,8 +24,6 @@ Users are able to
 
 In the future, the database will be updated with information about women in other off-screen professions such as writers, cinematographers and production designers and include a function to find a specific person by name and receive general information about them, as well as a list of their work.
 
----
-
 ## Built with:
 
 - HTML
@@ -34,13 +32,9 @@ In the future, the database will be updated with information about women in othe
 - React
 - Bootstrap
 
----
-
 ## Fonts used
 
 [DM Serif Display, regular](https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap)
-
----
 
 ## Links
 
