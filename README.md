@@ -15,11 +15,14 @@ Users are able to
 
 ![Female Filmmakers web view](https://github.com/NeleSchallenberg/myFlix-client/blob/dev/src/img/Screenshot.png)
 
-### Features that will be implemented/fixed:
+### Features that will be fixed asap:
 
 - Search bar functionality
 - Displaying favorite movies in user profile
 - Displaying similar movies in movie view
+
+### Feature that will be implemented later
+
 - List of directors
 
 In the future, the database will be updated with information about women in other off-screen professions such as writers, cinematographers and production designers and include a function to find a specific person by name and receive general information about them, as well as a list of their work.
