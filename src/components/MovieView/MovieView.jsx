@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 export const MovieView = ({ movies, user, token, updateUser }) => {
   const { movieId } = useParams();
   const movie = movies.find(movie => movie.id === movieId);
-  const similarMovies = movies.filter(movie => movie.genre === movie.genre ? true : false);
+  const similarMovies = movies.filter(filteredMovie => filteredMovie.genre === movie.genre ? true : false);
   const [favorite, setFavorite] = useState(user.FavoriteMovies.includes(movie.id));
 
   useEffect(() => {
@@ -32,7 +32,6 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     .then (user => {
       if (user) {
         console.log('was added')
-        alert('Movie was added to Favorites!');
         setFavorite(true);
         updateUser(user);
 
@@ -59,7 +58,6 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     })
     .then(user => {
       if (user) {
-        alert('Movie was deleted from Favorites!');
         setFavorite(false);
         updateUser(user);
       }
@@ -98,12 +96,11 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
       </Row>
       <Row>
         <h2 className='header'>Similar Movies</h2>
-        <h5 className='mt-3 mb-5'>Under construction...</h5>
-        {/* {similarMovies.map(movie => (
+        {similarMovies.map(movie => (
           <Col key={movie.id} sm={6} md={4} lg={3} className='mb-4'>
             <MovieCard movie={movie} />
           </Col>
-        ))} */}
+        ))}
       </Row>
     </>
   )

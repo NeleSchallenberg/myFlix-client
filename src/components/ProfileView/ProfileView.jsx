@@ -1,13 +1,11 @@
-import { useState } from 'react';
 import { Col, Row, } from 'react-bootstrap';
 import { FavoriteMovies } from './FavoriteMovies';
 import { UserInfo } from './UserInfo';
 import { UpdateUser } from './UpdateUser';
 
 export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) => {
- 
-
-  let favoriteMovieList = movies.filter(movie => user.FavoriteMovies.includes(movie._id))
+  
+  let favoriteMovieList = movies.filter(movie => user.FavoriteMovies.includes(movie.id))
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -87,7 +85,6 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
       </Row>
       <Row>
         <FavoriteMovies favoriteMovieList={favoriteMovieList}/>
-        <h5 className='mt-3 mb-5'>Under construction...</h5>
       </Row>
     </>
   )
