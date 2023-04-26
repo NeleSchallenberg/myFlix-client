@@ -43373,7 +43373,8 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactBootstrap = require("react-bootstrap");
-var _favoriteMovies = require("./FavoriteMovies");
+// import { FavoriteMovies } from './FavoriteMovies';
+var _movieCard = require("../MovieCard/MovieCard");
 var _userInfo = require("./UserInfo");
 var _updateUser = require("./UpdateUser");
 const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
@@ -43437,12 +43438,12 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                             birthday: user.Birthday
                         }, void 0, false, {
                             fileName: "src/components/ProfileView/ProfileView.jsx",
-                            lineNumber: 69,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/ProfileView/ProfileView.jsx",
-                        lineNumber: 68,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -43456,31 +43457,62 @@ const ProfileView = ({ user , token , movies , onLoggedOut , updateUser  })=>{
                             birthday: user.Birthday
                         }, void 0, false, {
                             fileName: "src/components/ProfileView/ProfileView.jsx",
-                            lineNumber: 79,
+                            lineNumber: 80,
                             columnNumber: 9
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/ProfileView/ProfileView.jsx",
-                        lineNumber: 78,
+                        lineNumber: 79,
                         columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                lineNumber: 67,
+                lineNumber: 68,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favoriteMovies.FavoriteMovies), {
-                    favoriteMovieList: favoriteMovieList
-                }, void 0, false, {
-                    fileName: "src/components/ProfileView/ProfileView.jsx",
-                    lineNumber: 87,
-                    columnNumber: 9
-                }, undefined)
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            className: "header mt-5",
+                            children: "Favourite Movies"
+                        }, void 0, false, {
+                            fileName: "src/components/ProfileView/ProfileView.jsx",
+                            lineNumber: 89,
+                            columnNumber: 7
+                        }, undefined),
+                        favoriteMovieList.length ? favoriteMovieList.map((movie)=>{
+                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                sm: 6,
+                                md: 4,
+                                lg: 3,
+                                className: "mb-4",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                    movie: movie
+                                }, void 0, false, {
+                                    fileName: "src/components/ProfileView/ProfileView.jsx",
+                                    lineNumber: 93,
+                                    columnNumber: 13
+                                }, undefined)
+                            }, movie.id, false, {
+                                fileName: "src/components/ProfileView/ProfileView.jsx",
+                                lineNumber: 92,
+                                columnNumber: 11
+                            }, undefined);
+                        }) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                            className: "mt-3 mb-5",
+                            children: "No favorite movies"
+                        }, void 0, false, {
+                            fileName: "src/components/ProfileView/ProfileView.jsx",
+                            lineNumber: 96,
+                            columnNumber: 12
+                        }, undefined)
+                    ]
+                }, void 0, true)
             }, void 0, false, {
                 fileName: "src/components/ProfileView/ProfileView.jsx",
-                lineNumber: 86,
+                lineNumber: 87,
                 columnNumber: 7
             }, undefined)
         ]
@@ -43495,72 +43527,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","./FavoriteMovies":"ky52s","./UserInfo":"enUww","./UpdateUser":"kpESR","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf"}],"ky52s":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f1cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f1cf.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "FavoriteMovies", ()=>FavoriteMovies);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _movieCard = require("../MovieCard/MovieCard");
-var _movieCardDefault = parcelHelpers.interopDefault(_movieCard);
-const FavoriteMovies = ({ favoriteMovieList  })=>{
-    console.log(favoriteMovieList);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: "header mt-5",
-                children: "Favourite Movies"
-            }, void 0, false, {
-                fileName: "src/components/ProfileView/FavoriteMovies.jsx",
-                lineNumber: 8,
-                columnNumber: 7
-            }, undefined),
-            favoriteMovieList.length ? favoriteMovieList.map((movie)=>{
-                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                    sm: 6,
-                    md: 4,
-                    lg: 3,
-                    className: "mb-4",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCardDefault.default), {
-                        movie: movie
-                    }, void 0, false, {
-                        fileName: "src/components/ProfileView/FavoriteMovies.jsx",
-                        lineNumber: 12,
-                        columnNumber: 13
-                    }, undefined)
-                }, movie.id, false, {
-                    fileName: "src/components/ProfileView/FavoriteMovies.jsx",
-                    lineNumber: 11,
-                    columnNumber: 11
-                }, undefined);
-            }) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                className: "mt-3 mb-5",
-                children: "No favorite movies"
-            }, void 0, false, {
-                fileName: "src/components/ProfileView/FavoriteMovies.jsx",
-                lineNumber: 15,
-                columnNumber: 12
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_c = FavoriteMovies;
-var _c;
-$RefreshReg$(_c, "FavoriteMovies");
-
-  $parcel$ReactRefreshHelpers$f1cf.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap/Col":"2L2I6","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","../MovieCard/MovieCard":"99v78"}],"enUww":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","./UserInfo":"enUww","./UpdateUser":"kpESR","@parcel/transformer-js/src/esmodule-helpers.js":"2pscz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cvaXf","../MovieCard/MovieCard":"99v78"}],"enUww":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$65f5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
