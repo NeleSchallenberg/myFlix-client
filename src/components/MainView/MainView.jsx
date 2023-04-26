@@ -9,7 +9,6 @@ import { NavigationBar } from '../NavigationBar/NavigationBar';
 import { SearchBar } from './SearchBar';
 import { Row, Col } from 'react-bootstrap';
 
-
 export const MainView = () => {
   const storedUser = localStorage.getItem('user');
   const storedToken = localStorage.getItem('token');

@@ -1,5 +1,4 @@
 import { Col, Row, } from 'react-bootstrap';
-// import { FavoriteMovies } from './FavoriteMovies';
 import { MovieCard } from '../MovieCard/MovieCard'
 import { UserInfo } from './UserInfo';
 import { UpdateUser } from './UpdateUser';
