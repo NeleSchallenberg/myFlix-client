@@ -147,9 +147,11 @@ export const MainView = () => {
                     {filteredMovies.map((movie) => (
                       <Col 
                         key={movie.id}
-                        sm={6} 
+                        sm={6}
                         md={4}
-                        lg={3}
+                        xl={3} 
+                        
+                        
                         className='mb-4'
                       >
                         <MovieCard movie={movie}/>
