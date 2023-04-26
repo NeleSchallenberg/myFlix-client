@@ -6,9 +6,7 @@ import { LoginView } from '../LoginView/LoginView';
 import { SignupView } from '../SignupView/SignupView';
 import { ProfileView } from '../ProfileView/ProfileView';
 import { NavigationBar } from '../NavigationBar/NavigationBar';
-import { SearchBar } from './SearchBar';
-import { Row, Col } from 'react-bootstrap';
-
+import { Form, Row, Col } from 'react-bootstrap';
 
 export const MainView = () => {
   const storedUser = localStorage.getItem('user');
@@ -135,7 +133,17 @@ export const MainView = () => {
                   <Col>Loading...</Col>
                 ) : (
                   <>
-                    <SearchBar />
+                    <Form>
+                      <Form.Group>
+                        <Form.Control
+                        className='mb-4'
+                          type='search'
+                          placeholder='Search by title'
+                          onChange={handleSearch}
+                        >
+                        </Form.Control>
+                      </Form.Group>
+                    </Form>
                     {filteredMovies.map((movie) => (
                       <Col 
                         key={movie.id}

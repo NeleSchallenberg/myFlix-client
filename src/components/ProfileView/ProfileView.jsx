@@ -1,10 +1,10 @@
 import { Col, Row, } from 'react-bootstrap';
-import { FavoriteMovies } from './FavoriteMovies';
+import { MovieCard } from '../MovieCard/MovieCard'
 import { UserInfo } from './UserInfo';
 import { UpdateUser } from './UpdateUser';
 
 export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) => {
-  
+
   let favoriteMovieList = movies.filter(movie => user.FavoriteMovies.includes(movie.id))
 
   const handleSubmit = event => {
@@ -84,7 +84,16 @@ export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) =>
       </Col>
       </Row>
       <Row>
-        <FavoriteMovies favoriteMovieList={favoriteMovieList}/>
+      <>
+      <h2 className='header mt-5'>Favourite Movies</h2>
+      {favoriteMovieList.length ? favoriteMovieList.map((movie) => {
+        return (
+          <Col key={movie.id} sm={6} md={4} lg={3} className='mb-4'>
+            <MovieCard movie={movie} />
+          </Col>
+        )
+      }) : <h5 className='mt-3 mb-5'>No favorite movies</h5>}
+    </>
       </Row>
     </>
   )
