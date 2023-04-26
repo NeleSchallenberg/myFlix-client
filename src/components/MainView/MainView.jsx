@@ -150,8 +150,6 @@ export const MainView = () => {
                         sm={6}
                         md={4}
                         xl={3} 
-                        
-                        
                         className='mb-4'
                       >
                         <MovieCard movie={movie}/>
