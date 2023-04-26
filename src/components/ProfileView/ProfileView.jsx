@@ -4,7 +4,7 @@ import { UserInfo } from './UserInfo';
 import { UpdateUser } from './UpdateUser';
 
 export const ProfileView = ({ user, token, movies, onLoggedOut, updateUser }) => {
-  
+
   let favoriteMovieList = movies.filter(movie => user.FavoriteMovies.includes(movie.id))
 
   const handleSubmit = event => {

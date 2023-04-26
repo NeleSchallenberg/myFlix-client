@@ -2,16 +2,12 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-// Expose SignupView component
 export const SignupView = () => {
-
-  // Add state variables for input fields
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
-  // Event handler for submitting
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -38,12 +34,9 @@ export const SignupView = () => {
     });
   };
 
-  // Creating SignupView component with event handler
   return (
     <Form onSubmit={handleSubmit} className='mt-5'>
-
       <h1 className='mb-3'>Sign Up</h1>
-
       <Form.Group className='mb-3' controlId='formUsername'>
         <Form.Label>Username:</Form.Label>
         <Form.Control 
@@ -54,7 +47,6 @@ export const SignupView = () => {
           minLength='4'
         />
       </Form.Group>
-
       <Form.Group className='mb-3' controlId='formPassword'>
         <Form.Label>Password:</Form.Label>
         <Form.Control 
@@ -64,7 +56,6 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
-
       <Form.Group className='mb-3' controlId='formEmail'>
         <Form.Label>Email:</Form.Label>
         <Form.Control
@@ -74,7 +65,6 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
-
       <Form.Group className='mb-3' controlId='formBirthday'>
         <Form.Label>Birthday:</Form.Label>
         <Form.Control
@@ -84,7 +74,6 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
-
       <Form.Group className='mb-3'>
         <Button 
           className='mt-2'
@@ -92,7 +81,6 @@ export const SignupView = () => {
           type='submit'
         >Submit</Button>
       </Form.Group>
-
     </Form>
   )
 }
